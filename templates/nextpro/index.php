@@ -16,7 +16,7 @@ $wa->usePreset('template.nextpro');
 $params        = $this->params;
 $logo          = $params->get('logoFile', '');
 $tagline       = $params->get('siteDescription', '');
-$colorScheme   = $params->get('colorScheme', 'light');
+$colorScheme   = $params->get('colorScheme', 'dark');
 $containerMax  = $params->get('containerWidth', '1200');
 $sidebarPos    = $params->get('sidebarPosition', 'none');
 $hasSidebar    = $sidebarPos !== 'none' && $this->countModules('sidebar');
@@ -28,7 +28,7 @@ $this->setHtml5(true);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b3d91">
+    <meta name="theme-color" content="#14171a">
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
@@ -51,6 +51,12 @@ $this->setHtml5(true);
                 <?php if ($logo) : ?>
                     <img src="<?php echo Uri::root() . htmlspecialchars($logo); ?>" alt="<?php echo htmlspecialchars($app->get('sitename')); ?>" class="tpl-brand__logo">
                 <?php else : ?>
+                    <?php // Placeholder mark — replace by setting the "Logo" template parameter to the real exported file. ?>
+                    <svg class="tpl-brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+                        <path d="M2 6 L14 20 L2 34" stroke="currentColor" stroke-width="4" fill="none" opacity="0.35"/>
+                        <path d="M10 6 L22 20 L10 34" stroke="currentColor" stroke-width="4" fill="none" opacity="0.65"/>
+                        <path d="M18 6 L30 20 L18 34" stroke="currentColor" stroke-width="4" fill="none"/>
+                    </svg>
                     <span class="tpl-brand__text"><?php echo htmlspecialchars($app->get('sitename')); ?></span>
                 <?php endif; ?>
                 <?php if ($tagline) : ?>

@@ -12,6 +12,12 @@
       "version": "5.3.3"
     },
     {
+      "name": "vendor.fonts.barlow-condensed",
+      "type": "style",
+      "uri": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      "version": "1.0.0"
+    },
+    {
       "name": "vendor.bootstrap.js",
       "type": "script",
       "uri": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
@@ -23,7 +29,7 @@
       "type": "style",
       "uri": "templates/nextpro/css/template.css",
       "version": "auto",
-      "dependencies": ["vendor.bootstrap.css"]
+      "dependencies": ["vendor.bootstrap.css", "vendor.fonts.barlow-condensed"]
     },
     {
       "name": "template.nextpro.custom.css",

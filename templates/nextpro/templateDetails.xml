@@ -3,7 +3,7 @@
     <name>nextpro</name>
     <creationDate>2026-08-05</creationDate>
     <author>Next Pro</author>
-    <copyright>Copyright (C) 2026 Next Pro. All rights reserved.</copyright>
+    <copyright>Copyright (C) 2026 Next Pro Amplificadores. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <version>1.0.0</version>
     <description>TPL_NEXTPRO_XML_DESCRIPTION</description>
@@ -39,7 +39,7 @@
             <fieldset name="basic" label="TPL_NEXTPRO_BASIC">
                 <field name="logoFile" type="media" label="TPL_NEXTPRO_LOGO" />
                 <field name="siteDescription" type="text" label="TPL_NEXTPRO_TAGLINE" />
-                <field name="colorScheme" type="list" default="light" label="TPL_NEXTPRO_COLOR_SCHEME">
+                <field name="colorScheme" type="list" default="dark" label="TPL_NEXTPRO_COLOR_SCHEME">
                     <option value="light">TPL_NEXTPRO_COLOR_SCHEME_LIGHT</option>
                     <option value="dark">TPL_NEXTPRO_COLOR_SCHEME_DARK</option>
                     <option value="auto">TPL_NEXTPRO_COLOR_SCHEME_AUTO</option>

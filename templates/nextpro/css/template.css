@@ -1,23 +1,32 @@
 /* ==========================================================================
    Next Pro — Template Design Tokens & Base Styles
    Framework: Bootstrap 5 (loaded via joomla.asset.json as vendor.bootstrap.css)
+
+   Brand identity extracted from the official Next Pro brand kit (Canva) and
+   the "Catálogo Digital 2026": dark technical background, mint-green as the
+   primary brand accent. Next Pro is deliberately migrating away from the
+   older cyan/blue accent toward this green — this template uses green as
+   the ONLY accent going forward. --color-accent-legacy-cyan is kept as a
+   reference/comment only; do not use it in new UI.
    ========================================================================== */
 
 :root {
-    /* Colour palette — placeholder brand colours, replace with real Next Pro identity */
-    --color-primary: #0b3d91;
-    --color-primary-dark: #082a66;
-    --color-secondary: #495867;
-    --color-accent: #12a594;
-    --color-background: #ffffff;
-    --color-surface: #f5f7fa;
-    --color-text: #1c2530;
-    --color-text-muted: #5b6672;
-    --color-border: #dfe4ea;
+    /* Colour palette — from the Next Pro brand kit */
+    --color-primary: #29e6ac;        /* mint/teal green — the brand's new primary accent */
+    --color-primary-strong: #1fc794; /* hover/active state for the green accent */
+    --color-ink: #0d0f11;            /* near-black background */
+    --color-background: #14171a;
+    --color-surface: #1c2024;
+    --color-surface-raised: #22262b;
+    --color-border: #2b3036;
+    --color-text: #f2f4f3;
+    --color-text-muted: #9aa3a0;
+
+    /* --color-accent-legacy-cyan: #29b6f6; -- old accent, being phased out. Do not use. */
 
     /* Typography */
+    --font-family-heading: "Barlow Condensed", "Oswald", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --font-family-heading: var(--font-family-base);
     --font-size-base: 1rem;
     --line-height-base: 1.6;
 
@@ -32,32 +41,26 @@
     --container-max-width: 1200px;
     --sidebar-width: 300px;
 
-    /* Borders / shadows */
-    --border-radius: 0.5rem;
-    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-    --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.10);
+    /* Borders / shadows — sharper corners than a generic template, echoing
+       the angular chevron in the logo mark */
+    --border-radius: 0.25rem;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
 
     /* Transitions */
     --transition-speed: 200ms;
     --transition-ease: ease-in-out;
 }
 
-[data-color-scheme="dark"] {
-    --color-background: #10151c;
-    --color-surface: #171d26;
-    --color-text: #e6e9ed;
-    --color-text-muted: #a2acb8;
-    --color-border: #2a323d;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-color-scheme="light"]) {
-        --color-background: #10151c;
-        --color-surface: #171d26;
-        --color-text: #e6e9ed;
-        --color-text-muted: #a2acb8;
-        --color-border: #2a323d;
-    }
+/* Optional light variant — kept available via the "Esquema de cores" template
+   parameter, but the brand's own materials are dark-first; dark is default. */
+[data-color-scheme="light"] {
+    --color-background: #f4f6f5;
+    --color-surface: #ffffff;
+    --color-surface-raised: #ffffff;
+    --color-border: #dde2e0;
+    --color-text: #14171a;
+    --color-text-muted: #565f5c;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -83,6 +86,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--color-text);
 }
 
@@ -91,11 +97,11 @@ a {
 }
 
 a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-strong);
 }
 
 :focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-primary);
     outline-offset: 2px;
 }
 
@@ -104,7 +110,7 @@ a:hover {
     top: -3rem;
     left: var(--space-md);
     background: var(--color-primary);
-    color: #fff;
+    color: var(--color-ink);
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--border-radius);
     z-index: 1050;
@@ -125,14 +131,18 @@ a:hover {
    -------------------------------------------------------------------------- */
 
 .tpl-topbar {
-    background-color: var(--color-primary-dark);
-    color: #fff;
+    background-color: var(--color-ink);
+    color: var(--color-text-muted);
     font-size: 0.875rem;
     padding-block: var(--space-xs);
 }
 
 .tpl-topbar a {
-    color: #fff;
+    color: var(--color-text-muted);
+}
+
+.tpl-topbar a:hover {
+    color: var(--color-primary);
 }
 
 /* --------------------------------------------------------------------------
@@ -142,7 +152,6 @@ a:hover {
 .tpl-header {
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
 }
 
 .tpl-header__inner {
@@ -162,19 +171,29 @@ a:hover {
 }
 
 .tpl-brand__logo {
-    max-height: 44px;
+    max-height: 40px;
     width: auto;
 }
 
-.tpl-brand__text {
-    font-weight: 700;
-    font-size: 1.25rem;
+.tpl-brand__mark {
+    width: 32px;
+    height: 32px;
     color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.tpl-brand__text {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    font-size: 1.375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text);
 }
 
 .tpl-brand__tagline {
     color: var(--color-text-muted);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     display: none;
 }
 
@@ -256,17 +275,21 @@ a:hover {
 .tpl-nav a {
     text-decoration: none;
     color: var(--color-text);
-    font-weight: 500;
-    display: inline-block;
-    padding: var(--space-sm) 0;
-    min-height: 44px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
+    padding: var(--space-sm) 0;
+    min-height: 44px;
+    border-bottom: 2px solid transparent;
 }
 
 .tpl-nav a:hover,
 .tpl-nav a.active {
     color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 /* --------------------------------------------------------------------------
@@ -277,12 +300,14 @@ a:hover {
     background-color: var(--color-surface);
     padding-block: var(--space-sm);
     font-size: 0.875rem;
+    color: var(--color-text-muted);
 }
 
 .tpl-banner {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: #fff;
+    background: linear-gradient(160deg, var(--color-surface) 0%, var(--color-ink) 100%);
+    color: var(--color-text);
     padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
 }
 
 /* --------------------------------------------------------------------------
@@ -323,7 +348,7 @@ a:hover {
    -------------------------------------------------------------------------- */
 
 .tpl-footer {
-    background-color: var(--color-surface);
+    background-color: var(--color-ink);
     border-top: 1px solid var(--color-border);
     padding-block: var(--space-xl);
     color: var(--color-text-muted);
@@ -332,7 +357,7 @@ a:hover {
 .tpl-footer__copy {
     margin-top: var(--space-lg);
     margin-bottom: 0;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -346,6 +371,7 @@ a:hover {
 }
 
 .tpl-error__code {
+    font-family: var(--font-family-heading);
     font-size: 4rem;
     color: var(--color-primary);
 }
