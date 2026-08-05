@@ -1,2 +1,0 @@
-# MARKETING
-Marketing by aline
