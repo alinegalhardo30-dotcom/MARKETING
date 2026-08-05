@@ -1,5 +1,7 @@
 # MARKETING - Joomla Extension Project
 
+> This repository also hosts a front-end template project for the Next Pro company site. See "Front-End Template (nextpro)" near the end of this file — its conventions (Bootstrap 5, no build tool, CSS tokens) are independent of the extension conventions below.
+
 ## Project Configuration
 
 - **Project Name**: MARKETING
@@ -132,6 +134,18 @@ Additional libraries:
 - [ ] Invoke appropriate builder agent(s) for implementation
 - [ ] Run `vendor/bin/phpunit` to execute tests
 - [ ] Invoke `joomla-code-reviewer` for a quality check
+
+## Front-End Template (nextpro)
+
+A separate, self-contained Joomla **site template** for the Next Pro institutional/services site lives at `templates/nextpro/`. It does not use the vendor namespace, service layer, or DI conventions above — those apply only to the `com_campaigns` component.
+
+- **Template source**: `templates/nextpro/`
+- **CSS framework**: Bootstrap 5.3 (via CDN, registered in `templates/nextpro/joomla.asset.json`)
+- **Build tool**: None — plain CSS in `templates/nextpro/css/template.css` (tokens/base) and `css/custom.css` (site-specific overrides)
+- **Style guide**: `.claude/style-guide.md`
+- **Design decisions**: `.claude/design-decisions.md`
+
+To install: zip the `templates/nextpro/` directory's contents (so `templateDetails.xml` is at the zip root) and install it via Joomla admin → System → Install → Extensions, then set it as the default site template under System → Templates → Site Templates.
 
 ## Documentation References
 

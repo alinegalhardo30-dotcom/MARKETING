@@ -1,0 +1,351 @@
+/* ==========================================================================
+   Next Pro — Template Design Tokens & Base Styles
+   Framework: Bootstrap 5 (loaded via joomla.asset.json as vendor.bootstrap.css)
+   ========================================================================== */
+
+:root {
+    /* Colour palette — placeholder brand colours, replace with real Next Pro identity */
+    --color-primary: #0b3d91;
+    --color-primary-dark: #082a66;
+    --color-secondary: #495867;
+    --color-accent: #12a594;
+    --color-background: #ffffff;
+    --color-surface: #f5f7fa;
+    --color-text: #1c2530;
+    --color-text-muted: #5b6672;
+    --color-border: #dfe4ea;
+
+    /* Typography */
+    --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-family-heading: var(--font-family-base);
+    --font-size-base: 1rem;
+    --line-height-base: 1.6;
+
+    /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 3rem;
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --sidebar-width: 300px;
+
+    /* Borders / shadows */
+    --border-radius: 0.5rem;
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+    --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.10);
+
+    /* Transitions */
+    --transition-speed: 200ms;
+    --transition-ease: ease-in-out;
+}
+
+[data-color-scheme="dark"] {
+    --color-background: #10151c;
+    --color-surface: #171d26;
+    --color-text: #e6e9ed;
+    --color-text-muted: #a2acb8;
+    --color-border: #2a323d;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-color-scheme="light"]) {
+        --color-background: #10151c;
+        --color-surface: #171d26;
+        --color-text: #e6e9ed;
+        --color-text-muted: #a2acb8;
+        --color-border: #2a323d;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -3rem;
+    left: var(--space-md);
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    z-index: 1050;
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   Topbar
+   -------------------------------------------------------------------------- */
+
+.tpl-topbar {
+    background-color: var(--color-primary-dark);
+    color: #fff;
+    font-size: 0.875rem;
+    padding-block: var(--space-xs);
+}
+
+.tpl-topbar a {
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Header / Navigation
+   -------------------------------------------------------------------------- */
+
+.tpl-header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.tpl-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding-block: var(--space-md);
+}
+
+.tpl-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.tpl-brand__logo {
+    max-height: 44px;
+    width: auto;
+}
+
+.tpl-brand__text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.tpl-brand__tagline {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .tpl-brand__tagline {
+        display: inline;
+    }
+}
+
+.tpl-nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--space-sm);
+    min-width: 44px;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+.tpl-nav-toggle__bar,
+.tpl-nav-toggle__bar::before,
+.tpl-nav-toggle__bar::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-text);
+}
+
+.tpl-nav-toggle__bar::before {
+    transform: translateY(-6px);
+}
+
+.tpl-nav-toggle__bar::after {
+    transform: translateY(4px);
+}
+
+@media (min-width: 992px) {
+    .tpl-nav-toggle {
+        display: none;
+    }
+}
+
+.tpl-nav {
+    display: none;
+    width: 100%;
+}
+
+.tpl-nav.is-open {
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .tpl-nav {
+        display: flex;
+        width: auto;
+    }
+}
+
+.tpl-nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-sm);
+}
+
+@media (min-width: 992px) {
+    .tpl-nav ul {
+        flex-direction: row;
+        gap: var(--space-lg);
+    }
+}
+
+.tpl-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    display: inline-block;
+    padding: var(--space-sm) 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.tpl-nav a:hover,
+.tpl-nav a.active {
+    color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumbs / Banner
+   -------------------------------------------------------------------------- */
+
+.tpl-breadcrumbs {
+    background-color: var(--color-surface);
+    padding-block: var(--space-sm);
+    font-size: 0.875rem;
+}
+
+.tpl-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #fff;
+    padding-block: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Layout — content + optional sidebar
+   -------------------------------------------------------------------------- */
+
+.tpl-layout {
+    display: grid;
+    gap: var(--space-xl);
+    padding-block: var(--space-xl);
+    grid-template-columns: 1fr;
+}
+
+.has-sidebar .tpl-layout {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+    .has-sidebar--right .tpl-layout {
+        grid-template-columns: 1fr var(--sidebar-width);
+    }
+
+    .has-sidebar--left .tpl-layout {
+        grid-template-columns: var(--sidebar-width) 1fr;
+    }
+
+    .has-sidebar--left .tpl-sidebar {
+        order: -1;
+    }
+}
+
+.tpl-sidebar > * + * {
+    margin-top: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.tpl-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+    color: var(--color-text-muted);
+}
+
+.tpl-footer__copy {
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   Error / Offline pages
+   -------------------------------------------------------------------------- */
+
+.tpl-error,
+.tpl-offline {
+    text-align: center;
+    padding-block: var(--space-xl);
+}
+
+.tpl-error__code {
+    font-size: 4rem;
+    color: var(--color-primary);
+}

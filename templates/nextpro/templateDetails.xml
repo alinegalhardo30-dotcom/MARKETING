@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site" method="upgrade">
+    <name>nextpro</name>
+    <creationDate>2026-08-05</creationDate>
+    <author>Next Pro</author>
+    <copyright>Copyright (C) 2026 Next Pro. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0.0</version>
+    <description>TPL_NEXTPRO_XML_DESCRIPTION</description>
+    <files>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+        <folder>language</folder>
+        <filename>component.php</filename>
+        <filename>error.php</filename>
+        <filename>index.php</filename>
+        <filename>offline.php</filename>
+        <filename>joomla.asset.json</filename>
+        <filename>templateDetails.xml</filename>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/tpl_nextpro.ini</language>
+        <language tag="en-GB">en-GB/tpl_nextpro.sys.ini</language>
+        <language tag="pt-BR">pt-BR/tpl_nextpro.ini</language>
+        <language tag="pt-BR">pt-BR/tpl_nextpro.sys.ini</language>
+    </languages>
+    <positions>
+        <position>topbar</position>
+        <position>menu</position>
+        <position>breadcrumbs</position>
+        <position>banner</position>
+        <position>sidebar</position>
+        <position>footer</position>
+        <position>debug</position>
+    </positions>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="TPL_NEXTPRO_BASIC">
+                <field name="logoFile" type="media" label="TPL_NEXTPRO_LOGO" />
+                <field name="siteDescription" type="text" label="TPL_NEXTPRO_TAGLINE" />
+                <field name="colorScheme" type="list" default="light" label="TPL_NEXTPRO_COLOR_SCHEME">
+                    <option value="light">TPL_NEXTPRO_COLOR_SCHEME_LIGHT</option>
+                    <option value="dark">TPL_NEXTPRO_COLOR_SCHEME_DARK</option>
+                    <option value="auto">TPL_NEXTPRO_COLOR_SCHEME_AUTO</option>
+                </field>
+            </fieldset>
+            <fieldset name="layout" label="TPL_NEXTPRO_LAYOUT">
+                <field name="containerWidth" type="list" default="1200" label="TPL_NEXTPRO_CONTAINER_WIDTH">
+                    <option value="960">TPL_NEXTPRO_CONTAINER_WIDTH_NARROW</option>
+                    <option value="1200">TPL_NEXTPRO_CONTAINER_WIDTH_STANDARD</option>
+                    <option value="1400">TPL_NEXTPRO_CONTAINER_WIDTH_WIDE</option>
+                </field>
+                <field name="sidebarPosition" type="list" default="none" label="TPL_NEXTPRO_SIDEBAR">
+                    <option value="left">TPL_NEXTPRO_SIDEBAR_LEFT</option>
+                    <option value="right">TPL_NEXTPRO_SIDEBAR_RIGHT</option>
+                    <option value="none">TPL_NEXTPRO_SIDEBAR_NONE</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
