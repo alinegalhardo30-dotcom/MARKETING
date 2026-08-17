@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Entendendo a instalação em linha de tensão constante — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>Entendendo a instalação em linha de tensão constante</span>
+<span style="color:#6b6b6b">surface → light → dark → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--surface np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Tecnologia</span>
+    <h1 class="np-h1 np-page-hero__title">Entendendo a instalação em linha de tensão constante</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-dark" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <h4 style="text-align: left;"><strong>Entendendo a Instalação em "Linha de Tensão Constante"</strong></h4>
+    <p style="text-align: justify;">A instalação "em linha de tensão constante" é uma prática antiga. Começou nos EUA no final dos anos 1920, tornando-se uma Norma Americana em 1949. Sonorizações com arandelas no teto ou com pequenas caixas distribuídas pelas paredes de um amplo ambiente (ou mesmo em vários ambientes) como ocorre em lojas de departamentos, supermercados, restaurantes, aeroportos, etc., são exemplos de som distribuído.</p>
+    <p style="text-align: justify;">A necessidade de se ter longos cabos interligando os alto-falantes e o amplificador exigiu técnicas diferentes da normalmente usada, onde ligamos os alto-falantes diretamente aos amplificadores - e sempre que fazemos desta forma, ficamos preocupados com o comprimento do cabo, que terá que ser muito curto para não provocar perdas significativas de potência e de qualidade sonora.</p>
+    <p style="text-align: justify;">Já os sistemas distribuídos exigem cabeamento que pode superar meio quilômetro de comprimento! Se encarássemos uma tarefa destas pelo método convencional, inevitavelmente acabaríamos esbarrando na necessidade de fios de espessura impraticável para interligar todo o sistema de caixas...</p>
+    <p style="text-align: justify;">Então como fazer esta instalação de uma forma mais inteligente?</p>
+    <p style="text-align: justify;">A solução veio do entendimento do conceito das <strong>linhas de distribuição de energia</strong>. Sim, o método usado para trazer energia elétrica das usinas geradoras até as cidades e depois até as nossas casas, atravessando centenas ou milhares de quilômetros, forneceu uma elegante solução para este problema. Tudo deriva da compreensão de o que se pretende entregar é potência (ou energia), e não tensão!</p>
+    <p style="text-align: justify;">Vamos analisar o cerne do problema através de um exemplo simples. Deem uma boa olhada na figura abaixo.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/instalacao-em-linha/figura-1.png" alt="Figura 1 – a instalação pelo método convencional de baixas impedâncias" width="602" height="214" /></em></p>
+    <p style="text-align: center;"><em>Figura 1 – a instalação pelo método convencional de baixas impedâncias</em></p>
+    <p style="text-align: justify;">Neste exemplo precisamos levar 10W (<em>P<sub>AMP</sub></em>) de som de um amplificador até um alto-falante de 8Ω (<em>Z<sub>AF</sub></em>). Mas ele está a 50m de distância do amplificador. Então teremos 100m de condutor (ida + volta), que poderia ser, digamos, um cabo de bitola 1mm<sup>2</sup>.</p>
+    <p style="text-align: justify;">Ora, 100m deste condutor de 1mm<sup>2</sup> têm uma resistência de 3,35Ω (resistência total do condutor, <em>R<sub>COND</sub></em>). Então podemos calcular as perdas (perdas totais no condutor, <em>P<sub>COND</sub></em>), ou seja, a potência que será perdida no fio ao longo de todo o caminho, através da fórmula:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/instalacao-em-linha/Formula-1.png" alt="Figura 2 do artigo “Entendendo a instalação em linha de tensão constante” — Next Pro" width="292" height="67" /></p>
+    <p style="text-align: justify;">Fazendo as contas, obtemos <em>P<sub>COND</sub></em> (perdas no fio) = <strong>2W</strong></p>
+    <p style="text-align: justify;">Vejam que estaríamos jogando fora 2W de 10W... 20% da energia irá dissipar na forma de calor, ao longo dos 100m de fio.</p>
+    <p style="text-align: justify;">Definitivamente esta não é uma boa solução!</p>
+    <p style="text-align: justify;">Além disso, a qualidade sonora será afetada. O critério de Thielle nos diz que devemos garantir um fator de amortecimento de, no mínimo, igual a 20 no alto-falante, para não degradar a qualidade do som. E neste exemplo, o fator de amortecimento visto por este alto-falante de 8Ω será de:</p>
+    <p style="text-align: justify;"><em>F<sub>A</sub> = Z<sub>AF</sub>/(Z<sub>AMP</sub> + R<sub>COND</sub>)</em> = 8Ω/3,35Ω = <strong>2,4</strong></p>
+    <p style="text-align: justify;"><em>NOTA: nesta conta não somamos a impedância de saída do amplificador Z<sub>AMP</sub> com a resistência do fio R<sub>COND</sub>, que seria o correto, pois Z<sub>AMP</sub> é tão menor que R<sub>COND</sub> que não faria nenhuma diferença no resultado!</em></p>
+    <p style="text-align: justify;">Este fator de amortecimento muito baixo (2,4) certamente resultaria em um som muito ruim, com graves e médio-graves "embolados" e sem definição.</p>
+    <p style="text-align: justify;">Então este é o problema que se apresenta: muitas perdas de potência (desperdício) e um baixo fator de amortecimento no alto-falante (som ruim).</p>
+    <h4 style="text-align: left;"><strong>COMO RESOLVER?</strong></h4>
+    <p style="text-align: justify;">Para resolver este problema, bem cedo se percebeu que um elegante "truque" aplicado pelos engenheiros eletricistas às redes de distribuição de energia elétrica poderia facilmente dar conta do recado. A ideia é aumentar a tensão, diminuindo proporcionalmente a corrente, que por sua vez fará diminuir as perdas. Ora, se o que pretendemos "entregar" é potência, e potência é tensão vezes corrente <em>(P = V × I)</em>, então podemos manipular a tensão para obter correntes mais baixas, tanto quanto quisermos.</p>
+    <p style="text-align: justify;">Lembrando que as perdas no condutor valem <em>I<sup>2</sup>× R<sub>COND</sub></em> então, se dobrarmos a tensão, por exemplo, reduziremos a corrente pela metade, e as perdas em <strong>quatro</strong> vezes!</p>
+    <p style="text-align: justify;">Vamos voltar ao nosso exemplo: se fizéssemos o mesmo serviço, mas agora em "linha de 70,7V", o esquema ficaria assim:</p>
+    <p style="text-align: center;"><em><img src="../../imagens/blog/instalacao-em-linha/figura-2.png" alt="Figura 2 – a instalação em linha de tensão constante" width="1130" height="232" /></em></p>
+    <p style="text-align: center;"><em>Figura 2 – a instalação em linha de tensão constante</em></p>
+    <p style="text-align: justify;">E as perdas, que antes eram de 2W, seriam reduzidas para:</p>
+    <p style="text-align: justify;"><em>P<sub>COND</sub></em> (perdas) = <strong>0,07W</strong> → <strong>30 vezes menos!</strong></p>
+    <p style="text-align: justify;">E o critério de Thielle, de um fator de amortecimento mínimo de 20, seria facilmente satisfeito, vejam:</p>
+    <p style="text-align: justify;"><em>F<sub>A</sub> = Z<sub>AF</sub>/ (Z<sub>AMP</sub> + R<sub>COND</sub>)</em> = 500Ω/3,35Ω = <strong>149</strong></p>
+    <p style="text-align: justify;"><em>NOTA: Ainda que os cálculos não sejam simples, por hora quero apenas mostrar como a "instalação em linha" resolve, de forma simples e elegante, o problema do cabeamento de longa distância.</em></p>
+    <p style="text-align: justify;">Na distribuição de energia elétrica o "truque" é feito convertendo-se, através de transformadores, a tensão extraída dos geradores em valores extremamente altos (345.000V) que em seguida são entregues à linha de transmissão, percorrendo centenas ou mesmo milhares de quilômetros. No destino (as subestações de energia) estas tensões altíssimas são convertidas para um valor intermediário (13.800V) e entregues as redes de distribuição urbanas. Somente bem perto de nossas casas ela é finalmente convertida em 127 ou 220V, pelos transformadores que vemos nos postes. Vejam que estes transformadores servem a poucas quadras, distribuindo energia em um raio de poucas dezenas de metros de distância.</p>
+    <p style="text-align: justify;">Na instalação em linha ocorre basicamente isso... Conectamos a saída do amplificador a um transformador para elevar a tensão de saída. Este <strong>transformador elevador</strong> ficou conhecido no Brasil pelo nome de "transformador-tronco". E agora no "destino", esta tensão aumentada precisa ser reconvertida para o valor original, para poder alimentar um alto-falante convencional. Este transformador, que é sempre individual para cada alto-falante e instalado bem junto deste, ficou conhecido pelo nome de "transformador de linha". Este esquema, mostrado na figura abaixo, é o que então se convencionou chamar de "distribuição em linha de tensão-constante".</p>
+    <p style="text-align: center;"><em><img src="../../imagens/blog/instalacao-em-linha/figura-3.png" alt="Figura 3 – som distribuído em linha de tensão constante" width="977" height="790" /></em></p>
+    <p style="text-align: center;"><em>Figura 3 – som distribuído em linha de tensão constante</em></p>
+    <h4 style="text-align: left;"><strong>MAS O QUE É "CONSTANTE" AFINAL?</strong></h4>
+    <p style="text-align: justify;">O termo "tensão constante" é bastante enganador e costuma causar muita confusão! É óbvio que a tensão na saída de um amplificador tocando música jamais será constante... Claro que não é! Estamos tocando música e variando continuamente a tensão na sua saída... Então por que usar este termo?</p>
+    <p style="text-align: justify;">Em teoria eletrônica existem dois tipos de fontes de energia de propriedades opostas: as <strong>fontes de corrente constante</strong> e as <strong>fontes de tensão constante</strong>. A <strong>fonte de corrente constante</strong> fornece uma quantidade fixa de corrente, independentemente da carga - então a tensão varia, mas a corrente não, esta permanece fixa. A <strong>fonte de tensão constante</strong> é exatamente o oposto: a tensão permanece constante, independentemente da carga - e é a corrente de saída que varia agora.</p>
+    <p style="text-align: justify;">Quando aplicamos a ideia de <strong>fonte de tensão constante</strong> a sistemas de som distribuídos, o termo "constante" é usado para descrever o sistema somente <strong>na sua potência máxima</strong>. Este é o ponto chave da compreensão!</p>
+    <p style="text-align: justify;">Na potência máxima, a tensão "na linha" é constante e não varia em função do número de alto-falantes conectados. Isto é: você pode adicionar ou remover (sujeito, claro, aos limites do amplificador) alto-falantes à vontade e a tensão na linha permanecerá sempre a mesma. Ou seja: <strong>constante</strong>.</p>
+    <p style="text-align: justify;">Ficou claro?</p>
+    <p style="text-align: justify;">A outra coisa que é constante é a <strong>tensão de saída dos diversos modelos de amplificadores na sua potência nominal</strong> - que é <strong>a mesma para todas as classificações de potência</strong>. Se tomarmos como exemplo o padrão de 70,7V isso implica que todos os modelos de amplificadores deste valor de linha, não importando a sua potência, emitem 70,7V em sua respectiva potência máxima! Em outras palavras: seja de 10, 100, 500 ou 1 milhão de Watts, a tensão de saída em sua respectiva potência máxima será 70,7V.</p>
+    <p style="text-align: justify;">Os valores de linha mais comuns são 25V, 70,7V, 100V, 141,4V (que é o 70,7V em "bridge") e 210V. E não esquecer que esses valores sempre são dados em <strong>tensão eficaz</strong>, ou seja, sempre em Volts RMS.</p>
+    <h4 style="text-align: left;"><strong>AMPLIFICADORES DE LINHA SEM TRANSFORMADOR-ELEVADOR, OU "TRONCO"</strong></h4>
+    <p style="text-align: justify;">Importante notar que o transformador-elevador, concebido para converter um amplificador convencional em "amplificador de linha", não é obrigatório. Vamos lembrar que tudo começou na década de 1920, sendo que nesta época a única maneira de se construir um amplificador de linha viável era justamente converter um amplificador convencional através de um transformador elevador de tensões (no Brasil conhecido como transformador-tronco).</p>
+    <p style="text-align: justify;">Décadas depois, com o advento dos transistores de potência de alta tensão, foi possível construir amplificadores com tensões de saída tão elevadas quanto 70,7 ou 100V <strong>diretamente</strong>, ou seja, sem a necessidade de um transformador "elevador" ligado à sua saída. Estes amplificadores modernos ficaram conhecidos como <em>direct-drivers</em> ou de <em>acoplamento direto</em>. São exemplos de amplificadores deste tipo os Next Pro <strong>NA2350/70</strong> e <strong>NA2650/70</strong>, da Série Nano.</p>
+    <p style="text-align: center;"><em><img src="../../imagens/blog/instalacao-em-linha/figura-4.png" alt="Figura 4 – som distribuído em linha de tensão constante, com amplificador de acoplamento direto (sem transformador-elevador)" width="977" height="790" /></em></p>
+    <p style="text-align: center;"><em>Figura 4 – som distribuído em linha de tensão constante, com amplificador de acoplamento direto (sem transformador-elevador)</em></p>
+    <p style="text-align: justify;">Reforçando que, embora o transformador-elevador não seja mais normalmente necessário, os transformadores de linha (que ficam junto a cada alto-falante) ainda são absolutamente necessários.</p>
+    <h4 style="text-align: left;"><strong>POR QUE AS LINHAS DE 70,7V SÃO AS MAIS COMUNS?</strong></h4>
+    <p style="text-align: justify;">A resposta está no aparente menor custo, mas também na tradição. As linhas de 70,7V se popularizaram nos EUA e também por aqui por não necessitarem de cuidados especiais com a instalação dos condutores. Em tensões maiores que 100Vrms, as normas elétricas, como a brasileira NBR5410, exigem o uso de conduítes, eletrodutos, separação e outros cuidados com a isolação. Em outras palavras, os mesmos cuidados reservados às instalações comuns de 127V ou 220Vac.</p>
+    <p style="text-align: justify;">Por outro lado, em linhas de tensões mais altas, como 100V ou 141,4V, torna-se possível utilizar condutores mais finos e mesmo considerando um gasto maior com os cuidados necessários, o custo destas linhas acaba sendo compensador, principalmente se as distâncias e/ou as potências forem grandes.</p>
+    <h4 style="text-align: left;"><strong>POR QUE NOS SISTEMAS EM LINHA RARAMENTE NOS PREOCUPAMOS COM AS IMPEDÂNCIAS?</strong></h4>
+    <p style="text-align: justify;">O conceito de tensão constante permite que os amplificadores e os alto-falantes apenas precisem ser classificados pela potência. Então podemos deixar os cálculos com impedâncias de lado e simplesmente somar as potências dos alto-falantes até, no máximo, igualar a potência do amplificador utilizado, e só.</p>
+    <p style="text-align: justify;">Vamos ver um exemplo.</p>
+    <p style="text-align: justify;">Para determinada instalação em linha de 141,4V dispomos de transformadores de linha de 4 potências diferentes, 5, 10, 15 e 25W. Vamos então distribuir os alto-falantes e a potência de acordo com as necessidades de cada setor.</p>
+    <p style="text-align: justify;">O problema se resume então a uma mera questão de selecionar a potência que atingirá o SPL necessário a cada setor e em seguida, somar tudo para obter a potência necessária de amplificador.</p>
+    <p style="text-align: justify;">Por exemplo. Digamos que esta linha consista de:</p>
+    <ul>
+    <li>8 alto-falantes com transformadores de 25W para o <strong>setor-1</strong></li>
+    <li>10 alto-falantes com transformadores de 15W para o <strong>setor-2</strong></li>
+    <li>20 alto-falantes com transformadores de 10W para o <strong>setor-3</strong></li>
+    <li>10 alto-falantes com transformadores de 5W para o <strong>setor-4</strong></li>
+    </ul>
+    <p style="text-align: justify;">Somando tudo você obterá 600W de potência total – basta então selecionar um amplificador de 600W @ 141,4V como o <strong>NA2350/70</strong> e pronto!</p>
+    <p style="text-align: justify;"><em>NOTA: não é necessário "chegar" a potência máxima do amplificador... Você poderia usar menos pontos, sem nenhum problema... Mas não se pode ultrapassar a potência máxima!</em></p>
+    <p style="text-align: justify;">Vejam como tudo ficou muito simples... Nem chegamos a falar em impedâncias!</p>
+    <p style="text-align: justify;">Porém, se quisermos calcular a impedância (ou carga) que um alto-falante ou arandela fará "na linha", depois de acoplado ao seu respectivo transformador de linha (veja a <em>figura 5</em>), ou seja, a sua "impedância refletida", basta aplicar a fórmula:</p>
+    <p style="text-align: left;"><em>Z<sub>R</sub> = V<sub>L</sub><sup>2</sup> / P<sub>TRAFO</sub></em></p>
+    <p style="text-align: center;"><img src="../../imagens/blog/instalacao-em-linha/figura-55.png" alt="Figura 5 - a impedância do alto-falante &quot;refletida&quot; pelo transformador de linha" width="321" height="215" /></p>
+    <p style="text-align: center;"><em>Figura 5 - a impedância do alto-falante "refletida" pelo transformador de linha</em></p>
+    <p style="text-align: justify;">Aplicando em uma linha de 141,4V com conjunto alto-falante/transformador de 10W, resulta em uma impedância <em>Z<sub>R</sub></em> = 2000Ω. Em outras palavras, a impedância do alto-falante, originalmente de 8Ω, foi "refletida" para 2000Ω, através do transformador de linha.</p>
+    <h4 style="text-align: left;"><strong>O QUE SÃO "TAPES DE POTÊNCIA"?</strong></h4>
+    <p style="text-align: justify;">Alguns transformadores de linha permitem escolher quanta potência irão retirar da linha. São os "tapes de potência" ou "tapes de <em>loudness</em>". Na <em>figura 6</em> vemos uma arandela equipada com um transformador deste tipo, com tapes de 6, 12 e 24W. A vantagem óbvia é poder retirar da linha a quantidade de potência realmente necessária para determinado setor, "poupando" potência para os setores mais exigentes, e assim utilizar um único tipo de transformador em toda a instalação. Por este motivo, estes tapes são às vezes chamados de "tapes de volume" (<em>loudness</em>). Eles podem até mesmo serem comutados por chave externa, funcionando de fato como um controle de volume.</p>
+    <p style="text-align: center;"><em><img src="../../imagens/blog/instalacao-em-linha/figura-6.png" width="670" height="692" alt="Figura 6 – uma arandela para uso em linhas de 100V, com tapes de potência de 6, 12 e 24W" /></em></p>
+    <p style="text-align: center;"><em>Figura 6 – uma arandela para uso em linhas de 100V, com tapes de potência de 6, 12 e 24W</em></p>
+    <h4 style="text-align: left;"><strong>E COMO DIMENSIONAR A BITOLA DA FIAÇÃO DA LINHA?</strong></h4>
+    <p style="text-align: justify;">A bitola necessária para a linha está condicionada a três fatores principais:</p>
+    <ul>
+    <li>A tensão de linha que escolher (70,7V, 100V, 141,4V... etc). Quanto mais alta a tensão, mais fina poderá ser a bitola do cabo;</li>
+    <li>O comprimento no ponto mais distante. Quanto mais longa for a linha, mais grossa deverá ser a bitola;</li>
+    <li>A potência total a ser transportada pela linha. Quanto mais potência, mais grossa deverá ser a bitola.</li>
+    </ul>
+    <p style="text-align: justify;">Se a instalação demandar distâncias realmente longas, ou muita potência, é melhor pensar em tensões mais altas já logo de partida, tal como 141,4V, que é o amp stereo de 70,7V operando em <em>bridge</em>. A partir daí calcula-se as perdas e testa-se pelo critério de Thielle, para cada bitola de cabo considerada.</p>
+    <p style="text-align: justify;">Porém, a execução destes cálculos não é realmente uma tarefa trivial.</p>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--dark">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

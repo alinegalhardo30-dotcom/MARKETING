@@ -1,0 +1,417 @@
+/* ==========================================================================
+   NEXT PRO — PÁGINAS DE CONTEÚDO
+   Sistema de "bandas" (faixas) que alternam fundo claro e escuro DENTRO do
+   corpo de um artigo do Joomla. O conteúdo do artigo é renderizado dentro do
+   .np-container do index.php, então a banda precisa "furar" o container para
+   ocupar a largura toda da tela — daí o truque de 100vw + margin negativa.
+
+   Regra de uso (documentada no MAPA-DO-SITE.md do pacote):
+   .np-band--dark    → fundo preto (#171717), texto branco
+   .np-band--light   → fundo branco
+   .np-band--surface → cinza muito claro (#f7f7f7)
+   .np-band--green   → faixa verde da marca (CTA)
+   ========================================================================== */
+
+/* O 100vw das bandas pode gerar scroll horizontal quando a barra de rolagem
+   ocupa espaço — travado aqui, no elemento de página. */
+.np-page { overflow-x: hidden; }
+
+/* ---------- Banda full-bleed ---------- */
+.np-band {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding-block: var(--np-space-24);
+}
+.np-band__inner {
+  max-width: var(--np-container-max);
+  margin-inline: auto;
+  padding-inline: var(--np-container-pad);
+}
+.np-band--tight { padding-block: var(--np-space-16); }
+.np-band--light { background: var(--np-white); color: var(--np-dark); }
+.np-band--surface { background: var(--np-gray-050); color: var(--np-dark); }
+.np-band--dark { background: var(--np-dark-800); color: var(--np-white); }
+.np-band--green { background: linear-gradient(135deg, var(--np-green) 0%, var(--np-green-600) 100%); color: var(--np-dark-800); }
+
+/* Texto dentro de banda escura */
+.np-band--dark p,
+.np-band--dark li { color: rgba(255, 255, 255, 0.75); }
+.np-band--dark h1,
+.np-band--dark h2,
+.np-band--dark h3,
+.np-band--dark h4,
+.np-band--dark strong { color: var(--np-white); }
+.np-band--dark .np-eyebrow { color: var(--np-green); }
+/* Links de texto ficam verdes no fundo escuro — mas botões mantêm as cores
+   próprias, senão o rótulo some (verde sobre verde). */
+.np-band--dark a:not(.np-btn):not(.np-line-card):not(.np-card):not(.np-canal) {
+  color: var(--np-green);
+}
+.np-band--dark hr { border-color: rgba(255, 255, 255, 0.12); }
+
+/* Cards herdam o tema da banda em que estão */
+.np-band--dark .np-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--np-white);
+}
+.np-band--dark .np-card:hover { border-color: var(--np-green); }
+.np-band--dark .np-diferencial { border-color: rgba(255, 255, 255, 0.12); }
+.np-band--dark .np-diferencial__icon { background: rgba(25, 216, 152, 0.14); color: var(--np-green); }
+.np-band--dark .np-badge--outline { border-color: rgba(255, 255, 255, 0.25); color: rgba(255, 255, 255, 0.8); }
+
+/* Banda verde: texto sempre escuro, sem exceção (contraste) */
+.np-band--green h1,
+.np-band--green h2,
+.np-band--green h3,
+.np-band--green p { color: var(--np-dark-800); }
+
+/* ---------- Hero de página interna ---------- */
+.np-page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--np-space-24) var(--np-space-16);
+}
+.np-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(25, 216, 152, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25, 216, 152, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at top right, black, transparent 70%);
+  pointer-events: none;
+}
+.np-page-hero .np-band__inner { position: relative; }
+.np-page-hero__title { max-width: 20ch; margin-top: var(--np-space-4); }
+.np-page-hero__lead { max-width: 62ch; margin-top: var(--np-space-6); font-size: var(--np-fs-lg); line-height: var(--np-lh-normal); }
+.np-page-hero__actions { display: flex; flex-wrap: wrap; gap: var(--np-space-4); margin-top: var(--np-space-8); }
+
+/* Versão clara do hero (para alternar página a página) */
+.np-page-hero.np-band--surface::before,
+.np-page-hero.np-band--light::before {
+  background-image:
+    linear-gradient(rgba(33, 33, 33, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 33, 33, 0.05) 1px, transparent 1px);
+}
+
+/* ---------- Cabeçalho de seção ---------- */
+.np-section-head { max-width: 62ch; margin-bottom: var(--np-space-12); }
+.np-section-head .np-h2 { margin-top: var(--np-space-3); }
+.np-section-head p { margin-top: var(--np-space-4); font-size: var(--np-fs-lg); }
+
+/* ---------- Texto corrido (artigos de blog e blocos longos) ---------- */
+.np-prose { max-width: 72ch; }
+.np-prose--wide { max-width: 90ch; }
+.np-prose > * + * { margin-top: var(--np-space-6); }
+.np-prose p { line-height: var(--np-lh-normal); }
+.np-prose h2 {
+  font-family: var(--np-font-display);
+  font-size: var(--np-fs-2xl);
+  line-height: var(--np-lh-snug);
+  margin-top: var(--np-space-16);
+  padding-top: var(--np-space-6);
+  border-top: var(--np-border);
+}
+.np-prose h3 { font-family: var(--np-font-display); font-size: var(--np-fs-xl); margin-top: var(--np-space-12); }
+.np-prose h4 { font-size: var(--np-fs-lg); margin-top: var(--np-space-8); }
+.np-prose ul,
+.np-prose ol { padding-left: 1.25rem; }
+.np-prose li + li { margin-top: var(--np-space-2); }
+.np-prose img { max-width: 100%; height: auto; border-radius: var(--np-radius-md); }
+.np-prose figure { margin: 0; }
+.np-prose figcaption,
+.np-prose em { color: var(--np-dark-400); font-size: var(--np-fs-sm); }
+.np-prose blockquote {
+  margin: 0;
+  padding: var(--np-space-4) var(--np-space-6);
+  border-left: 3px solid var(--np-green);
+  background: var(--np-green-050);
+  border-radius: 0 var(--np-radius-md) var(--np-radius-md) 0;
+}
+.np-prose blockquote p { margin: 0; }
+.np-band--dark .np-prose blockquote { background: rgba(25, 216, 152, 0.08); }
+.np-band--dark .np-prose figcaption,
+.np-band--dark .np-prose em { color: rgba(255, 255, 255, 0.6); }
+.np-band--dark .np-prose h2 { border-color: rgba(255, 255, 255, 0.12); }
+
+/* ---------- Citação de destaque ---------- */
+.np-quote {
+  font-family: var(--np-font-display);
+  font-size: var(--np-fs-xl);
+  line-height: var(--np-lh-snug);
+  max-width: 48ch;
+  border-left: 3px solid var(--np-green);
+  padding-left: var(--np-space-6);
+}
+.np-quote cite { display: block; margin-top: var(--np-space-4); font-family: var(--np-font-body); font-size: var(--np-fs-sm); font-style: normal; color: var(--np-dark-400); }
+.np-band--dark .np-quote cite { color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- Tabelas ---------- */
+.np-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.np-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--np-fs-sm);
+  min-width: 34rem;
+}
+.np-table th,
+.np-table td {
+  text-align: left;
+  padding: var(--np-space-3) var(--np-space-4);
+  border-bottom: var(--np-border);
+  vertical-align: top;
+}
+.np-table th {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--np-dark-400);
+  white-space: nowrap;
+}
+.np-table td strong { font-family: var(--np-font-mono); }
+.np-table tbody tr:hover { background: var(--np-green-050); }
+.np-band--dark .np-table th { color: rgba(255, 255, 255, 0.6); }
+.np-band--dark .np-table th,
+.np-band--dark .np-table td { border-color: rgba(255, 255, 255, 0.12); }
+.np-band--dark .np-table tbody tr:hover { background: rgba(255, 255, 255, 0.04); }
+
+/* ---------- Grid de especificações (página de produto) ---------- */
+.np-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--np-gray-200);
+  border: var(--np-border);
+  border-radius: var(--np-radius-md);
+  overflow: hidden;
+}
+@media (min-width: 640px) { .np-spec-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .np-spec-grid { grid-template-columns: repeat(3, 1fr); } }
+.np-spec {
+  background: var(--np-white);
+  padding: var(--np-space-4) var(--np-space-6);
+}
+.np-spec__label {
+  display: block;
+  font-size: var(--np-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--np-dark-400);
+  margin-bottom: var(--np-space-1);
+}
+.np-spec__value { font-family: var(--np-font-mono); font-weight: 600; color: var(--np-dark); }
+.np-spec__value--pending { font-family: var(--np-font-body); font-weight: 500; font-style: italic; color: #8a5a12; }
+.np-band--dark .np-spec-grid { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.12); }
+.np-band--dark .np-spec { background: #1f1f1f; }
+.np-band--dark .np-spec__label { color: rgba(255, 255, 255, 0.55); }
+.np-band--dark .np-spec__value { color: var(--np-white); }
+.np-band--dark .np-spec__value--pending { color: #e8a93a; }
+
+/* ---------- Lista de recursos/proteções ---------- */
+.np-feature-list { list-style: none; padding: 0; display: grid; gap: var(--np-space-3); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .np-feature-list { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .np-feature-list { grid-template-columns: repeat(3, 1fr); } }
+.np-feature-list li {
+  display: flex;
+  gap: var(--np-space-3);
+  align-items: baseline;
+  font-size: var(--np-fs-sm);
+  padding: var(--np-space-3) var(--np-space-4);
+  border: var(--np-border);
+  border-radius: var(--np-radius-md);
+}
+.np-feature-list li::before { content: "▸"; color: var(--np-green); font-size: var(--np-fs-xs); }
+.np-band--dark .np-feature-list li { border-color: rgba(255, 255, 255, 0.12); }
+
+/* ---------- Galeria de produto ---------- */
+.np-gallery { display: grid; gap: var(--np-space-4); grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 768px) { .np-gallery { grid-template-columns: repeat(4, 1fr); } }
+.np-gallery__item {
+  aspect-ratio: 4 / 3;
+  background: var(--np-white);
+  border: var(--np-border);
+  border-radius: var(--np-radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.np-gallery__item img { width: 100%; height: 100%; object-fit: contain; }
+.np-band--dark .np-gallery__item { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.12); }
+
+.np-figure { margin: 0; }
+.np-figure img { width: 100%; height: auto; border-radius: var(--np-radius-lg); display: block; }
+.np-figure figcaption { margin-top: var(--np-space-3); font-size: var(--np-fs-sm); color: var(--np-dark-400); }
+.np-band--dark .np-figure figcaption { color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- Split (texto + imagem) ---------- */
+.np-split { display: grid; gap: var(--np-space-12); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 900px) { .np-split { grid-template-columns: 1fr 1fr; } }
+.np-split--wide-left { grid-template-columns: 1fr; }
+@media (min-width: 900px) { .np-split--wide-left { grid-template-columns: 3fr 2fr; } }
+
+/* ---------- Timeline (história da empresa) ---------- */
+.np-timeline { list-style: none; padding: 0; margin: 0; }
+.np-timeline li {
+  position: relative;
+  padding-left: var(--np-space-8);
+  padding-bottom: var(--np-space-12);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.np-band--light .np-timeline li,
+.np-band--surface .np-timeline li { border-left-color: var(--np-gray-200); }
+.np-timeline li:last-child { padding-bottom: 0; }
+.np-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--np-radius-full);
+  background: var(--np-green);
+}
+.np-timeline__year {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-sm);
+  color: var(--np-green);
+  letter-spacing: 0.06em;
+}
+.np-timeline h3 { font-size: var(--np-fs-xl); margin: var(--np-space-2) 0 var(--np-space-3); }
+
+/* ---------- Etapas numeradas (fabricação) ---------- */
+.np-steps { display: grid; gap: var(--np-space-6); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .np-steps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .np-steps { grid-template-columns: repeat(4, 1fr); } }
+.np-step {
+  padding: var(--np-space-6);
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-2);
+}
+.np-band--dark .np-step { border-color: rgba(255, 255, 255, 0.12); }
+.np-step__num { font-family: var(--np-font-mono); font-size: var(--np-fs-sm); color: var(--np-green); }
+.np-step h3 { font-size: var(--np-fs-lg); margin: 0; }
+.np-step p { font-size: var(--np-fs-sm); margin: 0; }
+.np-step__media { margin: calc(var(--np-space-6) * -1) calc(var(--np-space-6) * -1) var(--np-space-2); aspect-ratio: 16 / 10; overflow: hidden; }
+.np-step__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---------- Cards de liderança ---------- */
+.np-leader { display: grid; gap: var(--np-space-6); }
+.np-leader__role { font-family: var(--np-font-mono); font-size: var(--np-fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--np-green); }
+.np-leader__name { font-family: var(--np-font-display); font-size: var(--np-fs-2xl); margin: var(--np-space-2) 0 0; }
+.np-leader__credentials { font-size: var(--np-fs-sm); color: var(--np-dark-400); margin-top: var(--np-space-2); }
+.np-band--dark .np-leader__credentials { color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- FAQ (accordion nativo, sem JS) ---------- */
+.np-faq { display: grid; gap: var(--np-space-3); }
+.np-faq details {
+  border: var(--np-border);
+  border-radius: var(--np-radius-md);
+  padding: var(--np-space-4) var(--np-space-6);
+  background: var(--np-white);
+}
+.np-band--dark .np-faq details { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.12); }
+.np-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--np-font-display);
+  font-size: var(--np-fs-lg);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--np-space-4);
+  align-items: center;
+}
+.np-faq summary::-webkit-details-marker { display: none; }
+.np-faq summary::after { content: "+"; color: var(--np-green); font-size: var(--np-fs-xl); line-height: 1; }
+.np-faq details[open] summary::after { content: "–"; }
+.np-faq details[open] summary { margin-bottom: var(--np-space-4); }
+.np-faq details > *:not(summary) { font-size: var(--np-fs-base); }
+
+/* ---------- Bloco de destaque / aviso ---------- */
+.np-note {
+  border-left: 3px solid var(--np-green);
+  background: var(--np-green-050);
+  padding: var(--np-space-4) var(--np-space-6);
+  border-radius: 0 var(--np-radius-md) var(--np-radius-md) 0;
+  font-size: var(--np-fs-sm);
+}
+.np-note--warn { border-left-color: var(--np-warning); background: #fff8ec; }
+.np-band--dark .np-note { background: rgba(25, 216, 152, 0.08); }
+.np-band--dark .np-note--warn { background: rgba(232, 169, 58, 0.12); }
+.np-note p { margin: 0; }
+.np-note p + p { margin-top: var(--np-space-3); }
+
+/* ---------- Dados de contato ---------- */
+.np-contact-list { list-style: none; padding: 0; display: grid; gap: var(--np-space-6); }
+.np-contact-list dt,
+.np-contact-list__label {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--np-dark-400);
+  margin-bottom: var(--np-space-1);
+}
+.np-band--dark .np-contact-list__label { color: rgba(255, 255, 255, 0.55); }
+.np-contact-list__value { font-size: var(--np-fs-lg); }
+
+/* ---------- Faixa de números / provas ---------- */
+.np-stats { display: flex; flex-wrap: wrap; gap: var(--np-space-12); }
+.np-stat strong { display: block; font-family: var(--np-font-display); font-size: var(--np-fs-3xl); color: var(--np-green); line-height: 1; }
+.np-stat span { display: block; margin-top: var(--np-space-2); font-size: var(--np-fs-sm); color: var(--np-dark-400); }
+.np-band--dark .np-stat span { color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- Cartão de linha de produto ---------- */
+.np-line-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-3);
+  padding: var(--np-space-8);
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  background: var(--np-white);
+  transition: transform var(--np-duration-base) var(--np-ease), border-color var(--np-duration-base) var(--np-ease), box-shadow var(--np-duration-base) var(--np-ease);
+}
+.np-line-card:hover { transform: translateY(-4px); border-color: var(--np-green); box-shadow: var(--np-shadow-md); }
+.np-band--dark .np-line-card { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.12); }
+.np-line-card__name { font-family: var(--np-font-display); font-size: var(--np-fs-2xl); margin: 0; }
+.np-line-card__models { font-family: var(--np-font-mono); font-size: var(--np-fs-xs); letter-spacing: 0.06em; color: var(--np-green-700); text-transform: uppercase; }
+.np-band--dark .np-line-card__models { color: var(--np-green); }
+.np-line-card__media { margin: calc(var(--np-space-8) * -1) calc(var(--np-space-8) * -1) 0; aspect-ratio: 16 / 9; background: var(--np-gray-050); overflow: hidden; }
+.np-line-card__media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.np-band--dark .np-line-card__media { background: rgba(255, 255, 255, 0.03); }
+.np-line-card__foot { margin-top: auto; padding-top: var(--np-space-4); }
+
+/* ---------- CTA de encerramento de página ---------- */
+.np-cta-final {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-6);
+  align-items: center;
+  justify-content: space-between;
+}
+.np-cta-final h2 { margin: 0; max-width: 24ch; }
+.np-cta-final__actions { display: flex; flex-wrap: wrap; gap: var(--np-space-4); }
+
+/* ---------- Ajustes finos ---------- */
+.np-mt-6 { margin-top: var(--np-space-6); }
+.np-mt-8 { margin-top: var(--np-space-8); }
+.np-mt-12 { margin-top: var(--np-space-12); }
+.np-muted { color: var(--np-dark-400); }
+.np-band--dark .np-muted { color: rgba(255, 255, 255, 0.6); }
+
+/* Quando o artigo estiver dentro do wrapper padrão do Joomla, tira o padding
+   lateral duplicado para as bandas encostarem certinho na borda da tela. */
+.item-page > .np-band:first-child,
+.np-article > .np-band:first-child { margin-top: calc(var(--np-space-6) * -1); }
+
+@media print {
+  .np-band { width: auto; margin-inline: 0; background: none !important; color: #000 !important; }
+}

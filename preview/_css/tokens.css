@@ -1,0 +1,120 @@
+/* ==========================================================================
+   NEXT PRO — DESIGN TOKENS
+   Fase 2 do projeto. Cores oficiais da marca (não alterar sem aprovação):
+   --np-green, --np-dark, --np-light-gray.
+   Todo o resto (tons derivados, tipografia, espaçamento) é proposta desta
+   fase, sujeita à sua aprovação antes de virar padrão definitivo.
+   ========================================================================== */
+
+:root {
+  /* ---- Cor de marca (oficial) ---- */
+  --np-green: #19d898;
+  --np-dark: #212121;
+  --np-light-gray: #eaeaea;
+
+  /* ---- Tons derivados da marca (uso em UI: hover, fundo, bordas) ---- */
+  --np-green-600: #14b881; /* hover em botões verdes */
+  --np-green-700: #0f9a6d; /* texto sobre fundo claro, links ativos */
+  --np-green-100: #e3fbf3; /* fundo sutil, badges, highlights */
+  --np-green-050: #f3fefa; /* fundo de seção muito sutil */
+
+  --np-dark-800: #171717; /* preto mais profundo — hero, footer */
+  --np-dark-600: #3a3a3a; /* texto secundário sobre fundo claro */
+  --np-dark-400: #6b6b6b; /* texto terciário / legendas */
+
+  --np-gray-050: #f7f7f7;
+  --np-gray-100: var(--np-light-gray);
+  --np-gray-200: #d9d9d9;
+  --np-gray-300: #bdbdbd;
+
+  --np-white: #ffffff;
+
+  /* ---- Cores semânticas (funcionais, não são cor de marca) ---- */
+  --np-success: var(--np-green);
+  --np-warning: #e8a93a;
+  --np-danger: #e0453f;
+  --np-info: #3aa0e8;
+
+  /* ---- Tipografia (PROPOSTA — aguardando aprovação) ----
+     Corpo: Inter — geométrica, altíssima legibilidade em telas, suporte
+     completo a acentuação PT-BR, variable font (1 arquivo, todos os pesos).
+     Destaque/headline: Space Grotesk — geométrica, técnica, mesma família
+     de espírito de "engenharia de precisão" sem ser fria/genérica.
+     Ambas open source (SIL OFL), self-hosted, sem custo de licença. */
+  --np-font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --np-font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --np-font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Escala tipográfica (razão ~1.25, mobile-first; ver clamp() no base.css) */
+  --np-fs-xs: 0.75rem;   /* 12px — legendas, badges */
+  --np-fs-sm: 0.875rem;  /* 14px — texto auxiliar */
+  --np-fs-base: 1rem;    /* 16px — corpo */
+  --np-fs-lg: 1.125rem;  /* 18px — corpo destacado */
+  --np-fs-xl: 1.5rem;    /* 24px — H4/H3 pequeno */
+  --np-fs-2xl: 2rem;     /* 32px — H3 */
+  --np-fs-3xl: 2.5rem;   /* 40px — H2 */
+  --np-fs-4xl: 3.25rem;  /* 52px — H1 seção */
+  --np-fs-5xl: 4.25rem;  /* 68px — H1 hero */
+
+  --np-lh-tight: 1.1;
+  --np-lh-snug: 1.3;
+  --np-lh-normal: 1.6;
+
+  /* ---- Espaçamento (escala em rem, base 8px) ---- */
+  --np-space-1: 0.25rem;
+  --np-space-2: 0.5rem;
+  --np-space-3: 0.75rem;
+  --np-space-4: 1rem;
+  --np-space-6: 1.5rem;
+  --np-space-8: 2rem;
+  --np-space-12: 3rem;
+  --np-space-16: 4rem;
+  --np-space-24: 6rem;
+  --np-space-32: 8rem;
+
+  /* ---- Raio, sombra, borda ---- */
+  --np-radius-sm: 4px;
+  --np-radius-md: 8px;
+  --np-radius-lg: 16px;
+  --np-radius-full: 999px;
+
+  --np-border: 1px solid var(--np-gray-200);
+  --np-border-dark: 1px solid rgba(255, 255, 255, 0.12);
+
+  --np-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --np-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --np-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.14);
+  --np-shadow-glow-green: 0 0 0 1px rgba(25, 216, 152, 0.25), 0 8px 24px rgba(25, 216, 152, 0.18);
+
+  /* ---- Container e grid ---- */
+  --np-container-max: 1280px;
+  --np-container-pad: 1.25rem;
+  --np-grid-gap: 1.5rem;
+
+  /* ---- Transições ---- */
+  --np-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --np-duration-fast: 150ms;
+  --np-duration-base: 250ms;
+
+  /* ---- Z-index ---- */
+  --np-z-header: 100;
+  --np-z-modal: 1000;
+  --np-z-toast: 1100;
+}
+
+/* Tema escuro é usado em seções específicas (hero, footer, fabricação),
+   não como modo alternável — a marca é predominantemente clara/técnica
+   com blocos escuros de contraste, não um "dark mode" de site inteiro. */
+.np-theme-dark {
+  --np-surface: var(--np-dark-800);
+  --np-text: var(--np-white);
+  --np-text-muted: rgba(255, 255, 255, 0.65);
+  --np-border-current: var(--np-border-dark);
+}
+
+.np-theme-light {
+  --np-surface: var(--np-white);
+  --np-text: var(--np-dark);
+  --np-text-muted: var(--np-dark-400);
+  --np-border-current: var(--np-border);
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A revolução das fontes chaveadas — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>A revolução das fontes chaveadas</span>
+<span style="color:#6b6b6b">dark → light → surface → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--dark np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Engenharia</span>
+    <h1 class="np-h1 np-page-hero__title">A revolução das fontes chaveadas</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-light" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <h4 style="text-align: left;"><strong>A revolução das fontes chaveadas</strong></h4>
+    <p style="text-align: justify;">Onde você está nesse momento? Não importa, um simples giro de cabeça, talvez nem isso e você já estará olhando para uma fonte chaveada (ou conversor chaveado). Onde você lê este artigo? No seu Smartphone? Dentro dele existem dezenas destes conversores. Está lendo no seu laptop, ou PC? Neles existem outras dezenas... sem falar nos carregadores de bateria. No monitor do PC vários outros, na TV, no ponto de acesso de wi-fi através do qual você está acessando a internet, na impressora, no telefone, na máquina de café expresso, etc., etc., etc... a lista é interminável. Uma coisa é absolutamente certa: o mundo de hoje não seria possível sem elas.</p>
+    <h4 style="text-align: left;"><strong>Como surgiram? E por quê? Um pouco de história</strong></h4>
+    <p style="text-align: justify;">Para entender como os conversores chaveados surgiram teremos que voltar ao século 19! Inventadas em 1836, as bobinas de indução (ou de ignição) utilizavam chaves mecânicas vibratórias (ou em termos modernos, relês), acionadas repetidamente, para gerar altas tensões a partir de baterias. Foram utilizadas em máquinas de raios-X, transmissores de rádio e outros. O rádio-telégrafo do Titanic utilizava uma bobina desse tipo.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-1.jpg" alt="Figura 1 – uma bobina de Ruhmkorff (patenteada em 1851), provavelmente o primeiro conversor chaveado da história – fonte Wikipédia" width="294" height="187" /></em></p>
+    <p style="text-align: center;"><em>Figura 1 – uma bobina de Ruhmkorff (patenteada em 1851), provavelmente o primeiro conversor chaveado da história – fonte Wikipédia</em></p>
+    <p style="text-align: justify;">Na primeira década do século 20 um sistema de ignição por descarga indutiva para motores não-diesel foi posta em produção pela Cadillac, sendo provavelmente o primeiro conversor chaveado a ser produzido em série. Nos anos 1930 os automóveis passaram a contar com rádios, que funcionavam, é claro, com válvulas. Para gerar as altas tensões necessárias a partir das baterias de 6 V foram desenvolvidos conversores chaveados eletromecânicos.</p>
+    <p style="text-align: justify;">No final dos anos 1950 este era o cenário – a utilidade básica dos conversores chaveados era gerar tensões (mais altas) a partir de baterias, sendo, então, o único modo prático de fazê-lo.</p>
+    <p style="text-align: justify;">Tudo muda quando Murphy e Starzec, dois engenheiros da General Motors, depositam em 1959 a U.S. Patent 3,040,271 – onde descrevem o que viria a ser a moderna fonte chaveada. Um conversor que, no lugar dos relês e vibradores mecânicos, utilizava transistores como elementos ativos e diodos de estado sólido como retificadores. Este feito seria rapidamente levado para dentro do programa espacial americano, nos primeiros satélites e logo depois nos programas tripulados Mercury e Gemini. Era o início do anos 1960 e a jóia da coroa era o recém-nascido programa Apollo, que pretendia levar o homem a lua antes do final da década de 1960. O problema que então se apresentava era conseguir alimentar toda a (grande) eletrônica embarcada nas minúsculas naves, incluindo aí os computadores de navegação – tudo a partir de baterias. Eram dois obstáculos centrais a serem transpostos:</p>
+    <ol>
+    <li>O peso do equipamento embarcado tinha que ser o menor possível – cada grama extra implicava em um aumento exponencial na quantidade de combustível requerido pelo foguete lançador;</li>
+    <li>As perdas tinham que ser as menores possíveis (ou a maior eficiência possível), por razões similares. As baterias eram carregadas por geradores, que demandavam combustível e oxigênio. Quanto maiores as perdas, maiores quantidades de combustível/oxidante teriam de ser levadas.</li>
+    </ol>
+    <p style="text-align: justify;">O desafio ficou a cargo do M.I.T. que desenvolveu as soluções, incluindo o AGC (Apollo Guidance Computer) e sua pequena fonte chaveada, que era embutida dentro do próprio gabinete do computador. Vemos aí um exemplo de como é uma colaboração de verdade entre uma universidade (privada) e uma empresa estatal!</p>
+    <p style="text-align: center;"><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-2.jpg" alt="Figura 2 – o Apollo Guidance Computer – Fonte M.I.T." width="389" height="207" /></em><em>Figura 2 – o Apollo Guidance Computer – Fonte M.I.T.</em></p>
+    <p style="text-align: justify;">Os programas da NASA foram os catalisadores para o desenvolvimento inicial das fontes chaveadas modernas, um ramo tecnológico hoje conhecido por <em>Power Conversion</em> (conversão de potência). O sucesso foi tamanho que rapidamente a indústria tratou de absorver a ideia. A Tektronix lançou, já em 1970 (apenas um ano após o primeiro pouso lunar) a série de osciloscópios 7000, empregando uma fonte chaveada de alta eficiência. Em 1972 a HP lançou a primeira calculadora de bolso com conversores chaveados embutidos; em 1973 o computador Alto da Xerox já utilizava fonte chaveada e vários outros produtos dos anos 1970 já possuíam fontes chaveadas, como o computador pessoal Apple II, lançado em 1977.</p>
+    <p style="text-align: justify;">A partir dos anos 1980, com a massificação de transistores especialmente desenvolvidos para o regime chaveado (MOSFETs e IGBTs) as fontes chaveadas, fortemente impulsionadas pela indústria de informática, rapidamente avançaram e praticamente extinguiram as fontes convencionais lineares de 60 Hz... para encontrá-las, hoje em dia, será necessário um grande esforço e talvez, até mesmo, uma visita a um museu!</p>
+    <h4 style="text-align: left;"><strong>O que diferencia uma fonte linear (convencional) de uma fonte chaveada</strong></h4>
+    <p style="text-align: justify;">Uma <strong>fonte linear</strong> ou <strong>convencional</strong> é um conversor AC-DC (AC: corrente alternada, DC: corrente contínua), portando funciona apenas a partir de uma rede elétrica AC. Utiliza um transformador para fazer a conversão AC-AC, que é basicamente diminuir ou aumentar as tensões para o secundário a partir de um primário ligado à rede elétrica (127 ou 220 Vac). Logo em seguida, as tensões AC (abaixadas ou aumentadas) são retificadas por diodos e filtradas por capacitores para obter uma tensão DC razoavelmente estável. Em algumas aplicações, reguladores eletrônicos adicionais são necessários para aprimorar essa regulação, o que pode vir a ser outra fonte importante de perdas.</p>
+    <p style="text-align: justify;">Tanto os conversores lineares quanto os chaveados podem ser divididos em dois grandes grupos: <strong>topologias não-isoladas</strong> e <strong>topologias isoladas</strong>.</p>
+    <p style="text-align: justify;">Na <strong>Fig. 3</strong> pode-se ver um típico conversor ou fonte convencional com <strong>saída não-isolada</strong>. Emprega um transformador com derivações feitas a partir de um único enrolamento, também conhecido por <strong>auto-transformador</strong>. Repare que suas saídas estão eletricamente (galvanicamente) ligadas à rede elétrica. As aplicações deste tipo de fonte são restritas a produtos cujas saídas não estejam ao alcance de humanos. Um exemplo típico são os fornos de micro-ondas, onde altas potências são necessárias sem necessidade de isolação da rede elétrica, pois tais eletrodomésticos não fazem conexão com nenhum outro equipamento externo e todos os controles acessíveis às pessoas podem ser bloqueados por painéis isolantes.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-3.jpg" alt="Figura 3 – conversor linear (convencional) não-isolado" width="681" height="194" /></em></p>
+    <p style="text-align: center;"><em>Figura 3 – conversor linear (convencional) <strong>não-isolado</strong></em></p>
+    <p style="text-align: justify;">Já na <strong>Fig. 4</strong> podemos ver uma típica fonte convencional com <strong>saída isolada</strong>. Produtos cujas entradas e/ou saídas são acessíveis a humanos e que produzam tensões e/ou potências maiores que 42 V e 250 VA estão sujeitos a regulamentações compulsórias de segurança, impostas por agências reguladoras, como as <em>UL</em>, <em>CSA</em>, <em>VDE</em>, o <em>INMETRO</em> e outras. O transformador é então utilizado para prover uma isolação efetiva da rede elétrica (isolação galvânica). Esta categoria reúne a maioria dos produtos utilizados por nós, tais como: TV´s, computadores, impressoras, carregadores de bateria, bem como os equipamentos de áudio e iluminação utilizados em eventos ao vivo e no estúdio.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-4.jpg" width="714" height="180" alt="Figura 4 – conversor linear (convencional) isolado" /></em></p>
+    <p style="text-align: center;"><em>Figura 4 – conversor linear (convencional) <strong>isolado</strong></em></p>
+    <p style="text-align: justify;">As <strong>fontes chaveadas</strong>, estando sujeitas as mesmas regulamentações, também são divididas em <strong>não-isoladas</strong> e <strong>isoladas</strong>.</p>
+    <p style="text-align: justify;"><strong>Topologias não-isoladas</strong>: utilizadas para regulação e/ou distribuição interna de tensões dentro do equipamento, após uma tensão principal ter sido provida a partir da rede elétrica por uma topologia isolada. Ou para adequar e/ou distribuir a alimentação proveniente de baterias às necessidades internas do equipamento. Observe que nas aplicações de topologias não-isoladas, a retificação a partir da rede AC não aparece, pois as normas de segurança as impedem de serem utilizadas nesta função. Sempre veremos, portanto, uma conversão do tipo DC-DC. Os exemplos típicos de aplicação são nos computadores de mesa e laptops (dentro da placa-mãe) e nos smartphones.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-5.jpg" alt="Figura 5 – conversor chaveado buck (abaixador de tensão) não-isolado" width="696" height="148" /></em></p>
+    <p style="text-align: center;"><em>Figura 5 – conversor chaveado buck (abaixador de tensão) <strong>não-isolado</strong></em></p>
+    <p style="text-align: justify;"><strong>Topologias isoladas</strong>: utilizadas para prover alimentação a partir da rede elétrica AC (127/220V). As fontes chaveadas são sempre conversores DC-DC, portanto para operar a partir da rede elétrica AC é necessário fazer uma pré-retificação e pré-filtragem (processo AC-DC), antes da conversão DC-DC isolada propriamente dita.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-6.jpg" alt="Figura 6 – conversor chaveado buck isolado (flyback)" width="912" height="268" /></em></p>
+    <p style="text-align: center;"><em>Figura 6 – conversor chaveado buck <strong>isolado</strong> (flyback)</em></p>
+    <p style="text-align: justify;">Essa pré-retificação e pré-filtragem, necessária em fontes chaveadas AC-DC isoladas, constitui justamente um dos calcanhares de Aquiles das fontes chaveadas alimentadas a partir da rede AC, pois impõe um baixo fator de potência à rede elétrica. Mas esse é assunto para um próximo artigo. Os exemplos típicos de aplicação das fontes chaveadas isoladas são as fontes dos PC´s (externa a placa-mãe) e nas TV´s, monitores de vídeo, carregadores de bateria de laptops e smartphones, amplificadores de áudio, unidades de iluminação com led´s, etc.</p>
+    <h4 style="text-align: left;"><strong>Qual o "pulo do gato" das fontes chaveadas?</strong></h4>
+    <p style="text-align: justify;">Lembremos que a conversão através de um indutor ou transformador envolvem os princípios de Faraday e Lenz. Sem entrar em muitos detalhes, podemos dizer que este processo só pode ser feito em presença de corrente alternada (AC). Até aqui nada ocorre de forma diferente entre as fontes convencionais e as chaveadas.</p>
+    <p style="text-align: justify;">Vamos olhar para a <strong>Fig. 7</strong>. Quando um engenheiro calcula um transformador para uma fonte isolada, a <strong>frequência</strong> da corrente alternada aparece no denominador da equação. Ora, a rede elétrica nos fornece um AC de freqüência igual a 60 Hz (a corrente alterna sua polaridade sessenta vezes por segundo) e tal frequência é diretamente aplicada ao transformador. Isso naturalmente impõe um limite para a indução do núcleo do tal transformador, limitando a sua potência (um cálculo semelhante se faz para as bobinas do transformador, para calcular o número de espiras de primário e secundário).</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-7.jpg" alt="Figura 7 – conversão AC-AC isolada linear a 60 Hz. 220 VRMS para 12 VRMS" width="330" height="120" /></em></p>
+    <p style="text-align: center;"><em>Figura 7 – conversão AC-AC isolada linear a 60 Hz. 220 V<sub>RMS</sub> para 12 V<sub>RMS</sub></em></p>
+    <p style="text-align: justify;">Ok, essa limitação sempre ocorrerá, pois é um limite físico, e ninguém passa por cima da física. Mas se mudarmos, desta fonte linear para uma fonte chaveada:</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-8.jpg" alt="Figura 8 – conversão AC-AC chaveada em altas frequências" width="698" height="234" /></em></p>
+    <p style="text-align: center;"><em>Figura 8 – conversão AC-AC chaveada em altas frequências</em></p>
+    <p style="text-align: justify;">Nós poderemos <strong>escolher que frequência usar</strong>... pois agora os 60 Hz da rede não são mais diretamente aplicados ao transformador. A rede é retificada e filtrada, transformando-se em DC. Mas logo depois aparece uma chave eletrônica <strong>SW</strong> (um transistor MOSFET, geralmente) que, por um processo liga/desliga, novamente gera uma corrente alternada AC, mas em uma <strong>freqüência que agora poderemos escolher</strong> (dentro de certos limites, mas poderemos). Então se, ao invés de escolher os mesmos <strong>60 Hz</strong> da rede elétrica (que nada mudaria) escolhêssemos <strong>60 kHz</strong>, mil vezes mais alto, o que aconteceria?</p>
+    <p style="text-align: justify;">Ao substituir 60 ciclos/segundo por 60 <strong>mil</strong> ciclos por segundo, a capacidade de indução do núcleo do transformador se torna <strong>mil vezes maior</strong>! Em realidade, o material do núcleo terá que ser diferente e existirão outras restrições na construção deste novo transformador, mas na prática, <strong>ele poderá ser feito muito, muito menor!</strong> O mesmo ocorrendo com as bobinas, onde passaremos de <strong>milhares de espiras, para algumas poucas dezenas de espiras</strong>. Com um comprimento total de fio de cobre muito, muito menor, as perdas diminuem exponencialmente. E são vários os efeitos em cascata que culminam com o aumento de eficiência, quando passamos de topologias lineares para chaveadas. Algo como 30% de eficiência das fontes lineares, para 95% de eficiência das fontes chaveadas, de maneira fácil!</p>
+    <p style="text-align: justify;"><strong>Um exemplo</strong>: quando passamos de uma fonte convencional/linear de 60 Hz, para uma chaveada de 60 kHz de alta eficiência, ambas com 1.000W de potência de saída, teremos aproximadamente a seguinte comparação:</p>
+    <div class="np-table-wrap"><table class="np-table" class="table table-striped table-bordered">
+    <tbody>
+    <tr><td> </td><td><strong>Linear de 60 Hz</strong></td><td><strong>Chaveada de 60 kHz</strong></td></tr>
+    <tr><td><strong>Potência útil de saída</strong></td><td>1000 W</td><td>1000 W</td></tr>
+    <tr><td><strong>Peso</strong></td><td>20-25kg</td><td>2-3kg</td></tr>
+    <tr><td><strong>Volume relativo</strong></td><td>1</td><td>1/5</td></tr>
+    <tr><td><strong>Perdas</strong></td><td>2345 W de calor</td><td>30 W de calor</td></tr>
+    <tr><td><strong>Fator de potência</strong></td><td>0,80</td><td>0,99</td></tr>
+    <tr><td><strong>Consumo de energia elétrica</strong></td><td>4200 VA</td><td>1060 VA</td></tr>
+    <tr><td><strong>Custo relativo</strong></td><td>1</td><td>1/3</td></tr>
+    </tbody>
+    </table></div>
+    <p style="text-align: center;"><em>Tabela I</em></p>
+    <p style="text-align: justify;">Voltando ao Apple II, desenvolvido em 1976, a situação era de um produto compacto (para a época) acomodado em um gabinete plástico, mas a fonte linear necessária para alimentá-lo simplesmente não cabia dentro desse pequeno gabinete (veja a Fig. 9). Além disso, mesmo se coubesse, suas perdas muito altas produziriam uma quantidade calor grande demais para o pequeno gabinete plástico e seriam necessários ventiladores para resfriá-lo (que também não caberiam) e acabariam por produzir ruído. No final de tudo, o produto seria grande, ruidoso, quente e pesado, ao contrário do que pretendiam seus criadores, que queriam um produto leve e portátil, que não produzisse calor nem ruído.</p>
+    <p><em><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/revolucao-fontes-chaveadas/fig-9.jpg" alt="Figura 9 – o Apple II. A fonte chaveada está dentro da pequena caixa metálica à esquerda" width="278" height="375" /></em></p>
+    <p style="text-align: center;"><em>Figura 9 – o Apple II. A fonte chaveada está dentro da pequena caixa metálica à esquerda</em></p>
+    <p style="text-align: justify;">Determinado em resolver essa situação, Steve Jobs levou Rod Holt para a Apple (que ainda funcionava na garagem), um técnico que já havia projetado fontes chaveadas para outras empresas e explicou o problema. Ele projetou para o Apple II uma fonte chaveada utilizando a mesma topologia da <strong>Fig. 6</strong>, resolvendo todos estes problemas de uma só vez. O resto é história.</p>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--surface">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

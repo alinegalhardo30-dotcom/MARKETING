@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amps com autotrafo - como funcionam? — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>Amps com autotrafo - como funcionam?</span>
+<span style="color:#6b6b6b">dark → light → surface → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--dark np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Engenharia</span>
+    <h1 class="np-h1 np-page-hero__title">Amps com autotrafo - como funcionam?</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-light" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <p style="text-align: justify;">Aqui explicaremos o princípio de funcionamento do amplificador com fonte convencional de autotransformador, ensinar como identificá-los e reproduzir algumas citações encontradas na Literatura.</p>
+    <p style="text-align: justify;">Amplificadores com autotransformador, também conhecidos pela alcunha de "rabo-quente", surgiram no Brasil há uns 20 anos. Enquanto o mundo, a partir dos anos 90, assistiu os amplificadores abandonarem as pesadas fontes convencionais em favor das leves e modernas fontes chaveadas, o mercado brasileiro observou alguns fabricantes apostando neste tipo de solução como um caminho para superar a dificuldade de migrar para tecnologias mais avançadas.</p>
+    <p><strong>COMO ESTES AMPLIFICADORES FUNCIONAM?</strong></p>
+    <p>Qualquer amplificador de potência, em qualquer lugar do mundo, utiliza (sempre utilizaram) fontes de alimentação <strong>isoladas da rede elétrica</strong>. Isto garante, de forma automática, a isolação de todas as entradas e saídas do produto, independentemente da fonte ser convencional ou chaveada.</p>
+    <p>O grande problema dos amplificadores de alta potência é que, se a fonte isolada é feita com tecnologia "antiga", ou seja, a partir de um transformador convencional de 60Hz (um grande toroidal, por ex), o amplificador acabará sendo grande, ineficiente, volumoso e pesado. A fim de compactar e tornar os amplificadores mais eficientes e leves, o passo lógico seguinte foi o desenvolvimento de fontes chaveadas capazes de alimentar amplificadores profissionais de alta potência, e ao mesmo tempo manter a natural isolação galvânica das fontes convencionais. Isto aconteceu a partir dos anos 1990, no mundo todo.</p>
+    <p>Vale observar que, até onde sabemos, jamais, em nenhum lugar do mundo, houve qualquer tentativa de se produzir um amplificador comercial com fonte chaveada não-isolada (até porque não haveria nenhuma vantagem e as implicações de segurança seriam complexas).</p>
+    <p>No Brasil, no entanto, alguns fabricantes preferiram substituir o transformador isolado de suas fontes convencionais pelo <strong>autotransformador</strong> - que é um tipo (mais antigo) de transformador que não possui entradas e saídas separadas e isoladas galvanicamente entre si.</p>
+    <p>A troca de um transformador convencional isolado por um autotransformador equivalente, em dadas situações específicas, diminui (por razões que não iremos abordar aqui) o volume e o peso deste componente. Embora ainda mais pesados e volumosos que suas contrapartes chaveadas, os amplificadores com fontes não-chaveadas com autotransformador serão mais compactos e leves quando comparados aos seus "primos" de fonte convencional isolada.</p>
+    <p>O preço cobrado será <strong>a ausência de isolação galvânica</strong>, que inevitavelmente resultará desta solução [4] e [5].</p>
+    <p>Vale destacar que, fora peso e volume um pouco menores, todas as desvantagens das fontes convencionais isoladas estarão presentes nas fontes convencionais não-isoladas com autotransformador. Elas continuarão sendo ineficientes, quentes, com baixo fator de potência, e sem qualquer capacidade universal (também não conseguem manter o desempenho perante variações de rede elétrica).</p>
+    <p>Para entender melhor a diferença entre fontes isoladas e fontes não-isoladas, vamos analisar o esquema elétrico básico de dois amplificadores e de suas fontes - o primeiro do tipo isolado e o segundo com fonte a autotransformador conforme [4] e [5] - e, por simplicidade omitindo as partes desnecessárias aos nossos objetivos. Vejam:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_01.png" width="600" height="350" alt="Figura 1 – Um amplificador isolado, o tipo &quot;normal&quot; - veja que tanto as entradas de sinal como as saídas de alto-falantes estão naturalmente isoladas da rede elétrica pelo transformador da fonte de alimentação" /></p>
+    <p><em>Figura 1 – Um amplificador isolado, o tipo "normal" - veja que tanto as entradas de sinal como as saídas de alto-falantes estão naturalmente isoladas da rede elétrica pelo transformador da fonte de alimentação</em></p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_02.png" alt="Figura 2 do artigo “Amps com autotrafo - como funcionam?” — Next Pro" width="600" height="273" /></p>
+    <p><em>Figura 2 – Um amplificador com autotransformador - repare que as saídas de alto-falantes estão eletricamente conectadas à rede elétrica - somente a entradas poderão ser isoladas através de um pequeno transformador de sinal (como em uma direct-box)</em></p>
+    <p>Examinando as Figuras 1 e 2 com cuidado, ficarão muito claras as diferenças entre um amplificador normal/isolado e um amplificador com autotransformador.</p>
+    <p><strong>É POSSÍVEL PARA UM USUÁRIO COMUM RECONHECER UM AMPLIFICADOR NÃO-ISOLADO?</strong></p>
+    <p><strong>Sim</strong>. Bastará checar se existe ou não isolação entre qualquer linha viva da rede AC (não estamos falando do pino central de aterramento - muita atenção) e qualquer das saídas de áudio (saídas dos alto-falantes), utilizando uma simples lâmpada incandescente de 127 ou 220V. Não é necessário aplicar qualquer sinal nas entradas e nem conectar qualquer carga aos amplificadores - porém o amplificador deverá estar conectado à rede elétrica e ligados (com a chave power na posição "on").</p>
+    <p>Em resumo, estaremos fazendo o seguinte:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_03.png" alt="Figura 3 - um teste simples de isolação - em um amplificador isolado a lâmpada não acende" width="600" height="300" /></p>
+    <p><em>Figura 3 - um teste simples de isolação - em um amplificador isolado a lâmpada não acende</em></p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_04.png" alt="Figura 4 - em um amplificador não-isolado a lâmpada irá acender, revelando a falta de isolação entre a rede elétrica e as saídas de áudio" width="600" height="307" /></p>
+    <p><em>Figura 4 - em um amplificador não-isolado a lâmpada irá acender, revelando a falta de isolação entre a rede elétrica e as saídas de áudio</em></p>
+    <p>Vamos exemplificar fazendo este teste na prática com três amplificadores. O primeiro amplificador possui fonte convencional. O segundo fonte chaveada e o terceiro fonte a autotransformador. Vejamos:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_05.JPG" alt="Figura 5 – O teste de isolação com um amplificador de fonte convencional, revelando a sua condição de saídas isoladas" width="600" height="450" /></p>
+    <p><em>Figura 5 – O teste de isolação com um amplificador de fonte convencional, revelando a sua condição de saídas isoladas</em></p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_06.JPG" alt="Figura 6 – O teste de isolação com um amplificador de fonte chaveada - também revelando uma condição de saídas isoladas" width="600" height="450" /></p>
+    <p><em>Figura 6 – O teste de isolação com um amplificador de fonte chaveada - também revelando uma condição de saídas isoladas</em></p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_07.jpg" alt="Figura 7 – O teste de isolação com um amplificador de fonte a autotransformador – repare a condição &quot;viva&quot; entre a rede AC e as saídas de som" width="600" height="450" /></p>
+    <p><em>Figura 7 – O teste de isolação com um amplificador de fonte a autotransformador – repare a condição "viva" entre a rede AC e as saídas de som</em></p>
+    <p><strong>MENÇÕES NA LITERATURA</strong></p>
+    <p>A única citação acerca de amplificadores com fontes à autotransformador foi encontrada no aclamado best-seller de Ben Duncan, "High Performance Audio Power Amplifiers" [1] - considerado a refêrencia mundial do assunto. Na página 231, ao descrever as partes essenciais das fontes de alimentação destinada a amplificadores, pode-se encontrar:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_12.jpg" alt="Figura 10 – pag. 231 do livro &quot;High Performance Audio Power Amplifiers&quot; de Ben Duncan" width="600" height="1035" /></p>
+    <p><em>Figura 10 – pag. 231 do livro "High Performance Audio Power Amplifiers" de Ben Duncan</em></p>
+    <p>Em uma tradução livre (com grifos mantidos), o Autor deste Best-Seller Mundial diz:</p>
+    <p>"(i) Um transformador isolador. Ele converte a tensão com simplicidade e alta eficiência, ao nível requerido, geralmente maior para válvulas e menor para a maioria dos transistores. O transformador é também essencial para a segurança. O AC de entrada é galvanicamente isolado (ao contrário de um autotransformador ou Variac), de modo que <em>de qualquer forma</em> estando a fase e o neutro conectados, a eletrônica do amplificador <strong><em>não</em></strong> se tornará viva para a rede elétrica".</p>
+    <p>O teor do texto dispensa comentários.</p>
+    <p>No mesmo capítulo o autor cita as soluções da <strong>Carver</strong> para as fontes de seus amplificadores, que empregaram uma interessante técnica de conversão, algo intermediário entre fontes convencionais e fontes chaveadas. Esta solução é freqüentemente confundida com fontes não-isoladas, creditando-se a Carver o uso de autotransformadores em seus amplificadores - o que <strong>não é verdade!</strong> Vejam, onde a ilustração prova se tratar de fonte isolada:</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="../../imagens/blog/autotrafo-como-funcionam/Amps_nao_isolados_13.jpg" alt="Figura 11 – pag. 243 do mesmo livro – as fontes Carver - claramente isoladas" width="600" height="1036" /></p>
+    <p><em>Figura 11 – pag. 243 do mesmo livro – as fontes Carver - claramente isoladas</em></p>
+    <p>Nos demais livros consultados [2] e [3] não foi encontrada nenhuma menção a respeito deste assunto.</p>
+    <p><strong>O QUE PODE SER ENCONTRADO NA INTERNET?</strong></p>
+    <p>Muito pouco, mas em dois sites americanos [4] e [5] foi encontrada uma mesma solução (ambas as publicações são do mesmo autor) proposta para um amplificador classe AB de 2x 2.500W com fonte a autotransformador, ou seja, não-isolada. A solução é indicada como "curiosidade" e para uso amador e inclui fortes advertências:</p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://www.electronics-lab.com/project/5000w-ultra-light-high-power-amplifier/">https://www.electronics-lab.com/project/5000w-ultra-light-high-power-amplifier/</a></p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://www.iq-technologies.net">https://iq-technologies.net</a>/projects/audio/043/index.html (requer cadastro de usuário)</p>
+    <p>Texto idêntico acompanha ambas as publicações. Uma parte dele, em tradução livre, diz:</p>
+    <p>"<em>CUIDADO: Este circuito é exclusivamente para uso amador. Contém partes não isoladas da rede elétrica e pode ser muito perigoso. As conexões para os alto-falantes não estão isoladas da rede AC e exige cuidados extras. Este procedimento visa a substituir uma fonte de alimentação convencional com grande redução de peso e custo, sem necessariamente recorrer a uma fonte chaveada. Este procedimento pode não ser permitido para uso comercial em alguns países. O autor não tem qualquer responsabilidade pela forma com que este circuito será aplicado</em>."</p>
+    <p>No site da Electronics-Lab [4] também podem ser encontrados vários comentários de leitores acerca desta solução.</p>
+    <p>OBS: todas as conclusões autorais reproduzidas neste artigo são de responsabilidade de seus respectivos autores.</p>
+    <p><strong>BIBLIOGRAFIA E SITES CONSULTADOS</strong></p>
+    <p>[1] Ben Duncan, High Performance Audio Power Amplifiers, Butterworth-Heinemann, 1998;</p>
+    <p>[2] G. Randy Slone, High-Power Audio Amplifier Constrution Manual, McGraw-Hill, 1999;</p>
+    <p>[3] Rosalfonso Bortoni, Amplificadores de Áudio, H. Sheldon Serviços de Marketing Ltda., 2002;</p>
+    <p>[4] Electronics-Lab website - https://www.electronics-lab.com</p>
+    <p>[5] IQ-Technologies website (requer cadastro) - https://iq-technologies.net</p>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--surface">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

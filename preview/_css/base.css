@@ -1,0 +1,93 @@
+/* ==========================================================================
+   NEXT PRO — BASE (reset + elementos tipográficos)
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--np-font-body);
+  font-size: var(--np-fs-base);
+  line-height: var(--np-lh-normal);
+  color: var(--np-dark);
+  background: var(--np-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--np-font-display);
+  font-weight: 700;
+  line-height: var(--np-lh-tight);
+  margin: 0 0 var(--np-space-4);
+  letter-spacing: -0.01em;
+}
+
+/* Fluido: cresce suavemente entre mobile e desktop sem precisar de várias
+   media queries por elemento. */
+h1, .np-h1 { font-size: clamp(2.25rem, 1.6rem + 2.6vw, var(--np-fs-5xl)); }
+h2, .np-h2 { font-size: clamp(1.75rem, 1.4rem + 1.6vw, var(--np-fs-3xl)); }
+h3, .np-h3 { font-size: clamp(1.375rem, 1.2rem + 0.8vw, var(--np-fs-2xl)); }
+h4, .np-h4 { font-size: var(--np-fs-xl); }
+
+p { margin: 0 0 var(--np-space-4); color: var(--np-dark-600); }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--np-green-700); text-decoration: none; }
+a:hover { color: var(--np-green-600); }
+
+ul, ol { margin: 0; padding-left: 1.25rem; }
+
+.np-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--np-space-2);
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--np-green-700);
+}
+.np-eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: var(--np-green);
+}
+
+.np-lead {
+  font-size: var(--np-fs-lg);
+  color: var(--np-dark-600);
+  max-width: 62ch;
+}
+
+/* Acessibilidade: foco sempre visível, nunca suprimido */
+:focus-visible {
+  outline: 2px solid var(--np-green);
+  outline-offset: 2px;
+}
+
+.np-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+.np-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--np-dark);
+  color: var(--np-white);
+  padding: var(--np-space-3) var(--np-space-4);
+  z-index: var(--np-z-modal);
+  border-radius: 0 0 var(--np-radius-sm) 0;
+}
+.np-skip-link:focus { left: 0; }

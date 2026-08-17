@@ -1,0 +1,492 @@
+/* ==========================================================================
+   NEXT PRO — CAMADA EDITORIAL
+   Composição assimétrica foto + texto, imagens grandes, respiro, microinterações.
+   Complementa pages.css (bandas claro/escuro) — não substitui.
+
+   Paleta: exclusivamente as três cores oficiais e suas variações de
+   luminosidade/transparência já declaradas em tokens.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TIPOGRAFIA EDITORIAL — texto corrido justificado
+   -------------------------------------------------------------------------- */
+.np-prose p,
+.np-texto p,
+.np-editorial__texto p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+/* Linha curta justificada fica com "rios" de espaço — abaixo de 40ch volta ao
+   alinhamento à esquerda, que lê melhor. */
+@media (max-width: 480px) {
+  .np-prose p,
+  .np-texto p,
+  .np-editorial__texto p { text-align: left; hyphens: auto; }
+}
+.np-prose li { text-align: justify; hyphens: auto; }
+
+/* Títulos, chamadas, botões, dados e blocos curtos nunca são justificados —
+   justificar linha curta abre "rios" de espaço e piora a leitura. */
+.np-h1, .np-h2, .np-h3, .np-eyebrow, .np-btn,
+.np-spec__value, .np-table td, .np-table th,
+.np-stat, .np-lead--curto,
+.np-contact-list__value, .np-contact-list__value p,
+.np-canal p, .np-destaque span, .np-numero span,
+.np-assistencia p, .np-editorial__legenda,
+.np-prev-prox p, .np-timeline p,
+.np-leader__credentials { text-align: left; hyphens: manual; }
+
+.np-lead {
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   2. BLOCO EDITORIAL — foto grande + texto ao lado, assimétrico e alternado
+   -------------------------------------------------------------------------- */
+.np-editorial {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--np-space-8);
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .np-editorial {
+    grid-template-columns: 7fr 5fr;   /* assimetria: foto domina */
+    gap: var(--np-space-16);
+  }
+  /* invertido: texto à esquerda, foto à direita */
+  .np-editorial--invertido { grid-template-columns: 5fr 7fr; }
+  .np-editorial--invertido .np-editorial__midia { order: 2; }
+  .np-editorial--invertido .np-editorial__texto { order: 1; }
+  /* variação com foto menor, para blocos mais textuais */
+  .np-editorial--texto-forte { grid-template-columns: 5fr 6fr; align-items: start; }
+  .np-editorial--texto-forte .np-editorial__midia { position: sticky; top: 6rem; }
+}
+.np-editorial + .np-editorial { margin-top: var(--np-space-24); }
+
+.np-editorial__midia { position: relative; }
+.np-editorial__midia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--np-radius-lg);
+}
+/* Fotos verticais não estouram a altura da tela */
+.np-editorial__midia--retrato img { max-height: 78vh; object-fit: cover; }
+
+.np-editorial__legenda {
+  margin-top: var(--np-space-3);
+  font-size: var(--np-fs-sm);
+  color: var(--np-dark-400);
+  text-align: left;
+}
+.np-band--dark .np-editorial__legenda { color: rgba(255, 255, 255, 0.6); }
+
+.np-editorial__texto > * + * { margin-top: var(--np-space-5); }
+.np-editorial__texto .np-h2 { margin: 0; }
+
+/* Selo numérico sobreposto à foto (etapas, capítulos da história) */
+.np-editorial__selo {
+  position: absolute;
+  top: var(--np-space-6);
+  left: var(--np-space-6);
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-sm);
+  letter-spacing: 0.12em;
+  background: var(--np-green);
+  color: var(--np-dark-800);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--np-radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   3. IMAGEM DE LARGURA TOTAL, com texto sobreposto
+   -------------------------------------------------------------------------- */
+.np-figura-larga {
+  position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+}
+.np-figura-larga img {
+  width: 100%;
+  height: clamp(18rem, 46vw, 34rem);
+  object-fit: cover;
+  display: block;
+}
+.np-figura-larga__conteudo {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: var(--np-space-16) var(--np-container-pad) var(--np-space-12);
+  /* gradiente forte o bastante para o texto ficar legível sobre qualquer foto */
+  background: linear-gradient(to top,
+              rgba(23, 23, 23, 0.94) 0%,
+              rgba(23, 23, 23, 0.80) 38%,
+              rgba(23, 23, 23, 0) 100%);
+  color: var(--np-white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+.np-figura-larga__conteudo > div {
+  max-width: var(--np-container-max);
+  margin-inline: auto;
+}
+.np-figura-larga__conteudo h2,
+.np-figura-larga__conteudo p { color: var(--np-white); max-width: 46ch; }
+.np-figura-larga__conteudo p { text-align: left; }
+
+/* --------------------------------------------------------------------------
+   4. MOSAICO DE FOTOS — 3 imagens, alturas diferentes
+   -------------------------------------------------------------------------- */
+.np-mosaico { display: grid; gap: var(--np-space-4); grid-template-columns: 1fr; }
+@media (min-width: 760px) {
+  .np-mosaico { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .np-mosaico > *:nth-child(2) { margin-top: var(--np-space-12); }
+}
+.np-mosaico img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--np-radius-md);
+  display: block;
+}
+.np-mosaico--alto img { aspect-ratio: 3 / 4; }
+
+/* --------------------------------------------------------------------------
+   5. NÚMEROS / PROVAS
+   -------------------------------------------------------------------------- */
+.np-numeros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--np-space-8);
+}
+@media (min-width: 760px) { .np-numeros { grid-template-columns: repeat(4, 1fr); } }
+.np-numero strong {
+  display: block;
+  font-family: var(--np-font-display);
+  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem);
+  line-height: 1;
+  color: var(--np-green);
+  font-variant-numeric: tabular-nums;
+}
+.np-numero span {
+  display: block;
+  margin-top: var(--np-space-2);
+  font-size: var(--np-fs-sm);
+  color: var(--np-dark-400);
+  max-width: 22ch;
+}
+.np-band--dark .np-numero span { color: rgba(255, 255, 255, 0.65); }
+
+/* --------------------------------------------------------------------------
+   6. LOGO OFICIAL DE SÉRIE / MODELO
+   Versões claras e escuras oficiais — nunca redesenhadas nem deformadas.
+   -------------------------------------------------------------------------- */
+.np-logo-serie img {
+  height: clamp(2.25rem, 1.6rem + 1.6vw, 3.25rem);
+  width: auto;               /* proporção original preservada */
+  display: block;
+}
+.np-logo-serie--grande img { height: clamp(3rem, 2rem + 3vw, 5rem); }
+
+/* --------------------------------------------------------------------------
+   7. PRODUTO
+   -------------------------------------------------------------------------- */
+.np-produto-capa { display: grid; gap: var(--np-space-8); grid-template-columns: 1fr; }
+@media (min-width: 900px) {
+  .np-produto-capa { grid-template-columns: 6fr 5fr; gap: var(--np-space-16); align-items: center; }
+}
+.np-produto-capa__midia img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--np-radius-lg);
+  display: block;
+}
+.np-produto-capa__render {
+  background: var(--np-white);
+  border-radius: var(--np-radius-lg);
+  padding: var(--np-space-8);
+}
+.np-band--dark .np-produto-capa__render { background: rgba(255, 255, 255, 0.05); }
+
+.np-destaques { display: grid; gap: var(--np-space-4); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .np-destaques { grid-template-columns: repeat(3, 1fr); } }
+.np-destaque {
+  padding: var(--np-space-6);
+  border-left: 2px solid var(--np-green);
+  background: rgba(25, 216, 152, 0.06);
+  border-radius: 0 var(--np-radius-md) var(--np-radius-md) 0;
+}
+.np-destaque strong {
+  display: block;
+  font-family: var(--np-font-display);
+  font-size: var(--np-fs-xl);
+  margin-bottom: var(--np-space-1);
+}
+.np-destaque span { font-size: var(--np-fs-sm); color: var(--np-dark-400); }
+.np-band--dark .np-destaque span { color: rgba(255, 255, 255, 0.65); }
+
+/* Barra de ações do produto (manual, contato, compra) */
+.np-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-3);
+  margin-top: var(--np-space-8);
+}
+
+/* Navegação entre modelos da mesma série */
+.np-nav-modelos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-2);
+  padding: var(--np-space-4) 0;
+}
+.np-nav-modelos a {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-sm);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--np-radius-full);
+  border: var(--np-border);
+  color: var(--np-dark);
+  white-space: nowrap;
+}
+.np-nav-modelos a:hover { border-color: var(--np-green); color: var(--np-green-700); }
+.np-nav-modelos a[aria-current="page"] {
+  background: var(--np-green);
+  border-color: var(--np-green);
+  color: var(--np-dark-800);
+  font-weight: 600;
+}
+.np-band--dark .np-nav-modelos a { border-color: rgba(255, 255, 255, 0.2); color: rgba(255,255,255,0.85); }
+.np-band--dark .np-nav-modelos a:hover { border-color: var(--np-green); color: var(--np-green); }
+.np-band--dark .np-nav-modelos a[aria-current="page"] { color: var(--np-dark-800); }
+
+/* Anterior / próximo */
+.np-prev-prox { display: grid; gap: var(--np-space-4); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .np-prev-prox { grid-template-columns: 1fr 1fr; } }
+.np-prev-prox a {
+  display: block;
+  padding: var(--np-space-6);
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  transition: border-color var(--np-duration-base) var(--np-ease);
+}
+.np-prev-prox a:hover { border-color: var(--np-green); }
+.np-prev-prox span {
+  display: block;
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--np-dark-400);
+  margin-bottom: var(--np-space-2);
+}
+.np-prev-prox strong { font-family: var(--np-font-display); font-size: var(--np-fs-xl); }
+.np-prev-prox a:last-child { text-align: right; }
+.np-band--dark .np-prev-prox a { border-color: rgba(255, 255, 255, 0.14); }
+.np-band--dark .np-prev-prox span { color: rgba(255, 255, 255, 0.55); }
+
+/* --------------------------------------------------------------------------
+   8. CANAIS DE CONTATO POR FINALIDADE
+   -------------------------------------------------------------------------- */
+.np-canais { display: grid; gap: var(--np-space-6); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .np-canais { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .np-canais { grid-template-columns: repeat(4, 1fr); } }
+.np-canal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-3);
+  padding: var(--np-space-8);
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  height: 100%;
+  transition: border-color var(--np-duration-base) var(--np-ease),
+              transform var(--np-duration-base) var(--np-ease);
+}
+.np-canal:hover { border-color: var(--np-green); transform: translateY(-3px); }
+.np-canal__quando {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--np-green-700);
+}
+.np-band--dark .np-canal { border-color: rgba(255, 255, 255, 0.14); }
+.np-band--dark .np-canal__quando { color: var(--np-green); }
+.np-canal h3 { font-size: var(--np-fs-xl); margin: 0; }
+.np-canal p { font-size: var(--np-fs-sm); margin: 0; }
+.np-canal .np-btn { margin-top: auto; }
+
+/* --------------------------------------------------------------------------
+   9. FILTRO DE ASSISTÊNCIAS POR ESTADO
+   -------------------------------------------------------------------------- */
+.np-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-4);
+  align-items: flex-end;
+  padding: var(--np-space-6);
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  background: var(--np-white);
+}
+.np-band--dark .np-filtro { background: rgba(255, 255, 255, 0.04); border-color: rgba(255,255,255,0.14); }
+.np-filtro__campo { display: flex; flex-direction: column; gap: var(--np-space-2); flex: 1 1 16rem; }
+.np-filtro label {
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--np-dark-400);
+}
+.np-band--dark .np-filtro label { color: rgba(255, 255, 255, 0.6); }
+.np-filtro select {
+  font-family: var(--np-font-body);
+  font-size: var(--np-fs-base);
+  padding: 0.85rem 1rem;          /* alvo de toque confortável no celular */
+  min-height: 48px;
+  border: 1px solid var(--np-gray-300);
+  border-radius: var(--np-radius-md);
+  background: var(--np-white);
+  color: var(--np-dark);
+  width: 100%;
+}
+.np-filtro select:focus-visible { outline: 2px solid var(--np-green); outline-offset: 2px; }
+.np-filtro__contagem { font-size: var(--np-fs-sm); color: var(--np-dark-400); }
+.np-band--dark .np-filtro__contagem { color: rgba(255, 255, 255, 0.65); }
+
+.np-assistencias { display: grid; gap: var(--np-space-4); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .np-assistencias { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1150px) { .np-assistencias { grid-template-columns: repeat(3, 1fr); } }
+.np-assistencia {
+  border: var(--np-border);
+  border-radius: var(--np-radius-lg);
+  padding: var(--np-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-2);
+}
+.np-band--dark .np-assistencia { border-color: rgba(255, 255, 255, 0.14); }
+.np-assistencia__uf {
+  align-self: flex-start;
+  font-family: var(--np-font-mono);
+  font-size: var(--np-fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--np-green-100);
+  color: var(--np-green-700);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--np-radius-full);
+}
+.np-band--dark .np-assistencia__uf { background: rgba(25, 216, 152, 0.16); color: var(--np-green); }
+.np-assistencia h3 { font-size: var(--np-fs-lg); margin: 0; }
+.np-assistencia__cidade { font-size: var(--np-fs-sm); color: var(--np-dark-400); }
+.np-band--dark .np-assistencia__cidade { color: rgba(255, 255, 255, 0.6); }
+.np-assistencia__endereco { font-size: var(--np-fs-sm); }
+.np-assistencia__contatos { display: flex; flex-wrap: wrap; gap: var(--np-space-2); margin-top: auto; padding-top: var(--np-space-4); }
+.np-assistencia__contatos a {
+  font-size: var(--np-fs-sm);
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--np-radius-full);
+  border: 1px solid var(--np-gray-300);
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.np-assistencia__contatos a:hover { border-color: var(--np-green); color: var(--np-green-700); }
+.np-band--dark .np-assistencia__contatos a { border-color: rgba(255, 255, 255, 0.2); }
+.np-vazio { padding: var(--np-space-12); text-align: center; color: var(--np-dark-400); }
+.np-band--dark .np-vazio { color: rgba(255, 255, 255, 0.6); }
+
+/* --------------------------------------------------------------------------
+   10. MICROINTERAÇÕES — entrada suave no scroll
+   Discretas de propósito: opacidade + 12px de deslocamento, uma vez só.
+   -------------------------------------------------------------------------- */
+/* O conteúdo é visível por padrão. A classe np-anim só é adicionada pelo JS
+   quando ele confirma que consegue animar — assim, sem JS, com JS quebrado ou
+   com "movimento reduzido" ligado, nada some da página. */
+html.np-anim .np-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms var(--np-ease), transform 600ms var(--np-ease);
+  will-change: opacity, transform;
+}
+html.np-anim .np-reveal.is-visivel { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.np-anim .np-reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Hover de produto: elevação sutil, sem sombra pesada */
+.np-line-card,
+.np-card { will-change: transform; }
+
+/* --------------------------------------------------------------------------
+   11. AJUSTES RESPONSIVOS DE VERDADE
+   -------------------------------------------------------------------------- */
+/* Tabelas técnicas viram lista rotulada no celular */
+@media (max-width: 640px) {
+  .np-table--responsiva thead { display: none; }
+  .np-table--responsiva,
+  .np-table--responsiva tbody,
+  .np-table--responsiva tr,
+  .np-table--responsiva td { display: block; width: 100%; min-width: 0; }
+  .np-table--responsiva tr {
+    border: var(--np-border);
+    border-radius: var(--np-radius-md);
+    padding: var(--np-space-3);
+    margin-bottom: var(--np-space-3);
+  }
+  .np-table--responsiva td { border: 0; padding: var(--np-space-2) 0; }
+  .np-table--responsiva td::before {
+    content: attr(data-rotulo);
+    display: block;
+    font-family: var(--np-font-mono);
+    font-size: var(--np-fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--np-dark-400);
+    margin-bottom: 2px;
+  }
+  .np-band--dark .np-table--responsiva tr { border-color: rgba(255, 255, 255, 0.14); }
+  .np-band--dark .np-table--responsiva td::before { color: rgba(255, 255, 255, 0.55); }
+}
+
+/* Alvos de toque confortáveis no celular */
+@media (max-width: 900px) {
+  .np-btn { min-height: 48px; padding-inline: 1.4rem; }
+  .np-nav-modelos a { min-height: 42px; display: inline-flex; align-items: center; }
+  .np-band { padding-block: var(--np-space-16); }
+  .np-band--tight { padding-block: var(--np-space-12); }
+  .np-page-hero { padding-block: var(--np-space-16) var(--np-space-12); }
+}
+
+/* O WhatsApp flutuante não pode cobrir conteúdo no celular */
+@media (max-width: 600px) {
+  .np-whatsapp-float {
+    right: var(--np-space-4);
+    bottom: var(--np-space-4);
+    padding: 0.8rem 1.1rem;
+  }
+  body { padding-bottom: 4.5rem; }
+}
+
+/* Imagens nunca estouram o container */
+img { max-width: 100%; }
+
+/* Foco visível em tudo que é interativo (acessibilidade/teclado) */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--np-green);
+  outline-offset: 3px;
+  border-radius: var(--np-radius-sm);
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Escolhendo a potência do amplificador — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>Escolhendo a potência do amplificador</span>
+<span style="color:#6b6b6b">surface → light → dark → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--surface np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Dicas</span>
+    <h1 class="np-h1 np-page-hero__title">Escolhendo a potência do amplificador</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-dark" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <h3 style="text-align: left;">Escolhendo a potência do amplificador</h3>
+    <p><strong>COMO DIMENSIONAR A POTÊNCIA DO AMPLIFICADOR PARA UM CERTO ALTO-FALANTE?</strong></p>
+    <p>Os "chutes" mais comuns são:</p>
+    <p>Uso a potência RMS do alto-falante também para o amplificador?</p>
+    <p>Uso a potência "musical" (Music Program) do alto-falante para o amplificador?</p>
+    <p>Uso o dobro da potência do alto-falante? A mesma potência? A metade? Qual das duas devo considerar, a potência RMS ou a "musical"?</p>
+    <p>A fim de esclarecer esta questão – de uma vez por todas – precisamos ter definido o que pretendemos desta caixa de som. Ou seja: ter em mente o objetivo da sonorização.</p>
+    <p>A partir daí chegaremos a uma resposta de firme embasamento técnico.</p>
+    <p><strong>PASSO A PASSO: PRIMEIRO PRECISAMOS ENTENDER O QUE É "FATOR DE CRISTA"</strong></p>
+    <p>Tudo seria muito fácil se o programa musical não fosse tão complicado! Se a música fosse como um simples sinal senoidal (como alguns por aí dizem ser) nossa vida seria bem mais simples!</p>
+    <p>Para entender como a natureza do sinal musical complica a nossa vida na hora de escolher a potência do amplificador, devemos antes entender, ao menos subjetivamente, o significado de <strong>Fator de Crista</strong>.</p>
+    <p>O <strong>Fator de Crista</strong> pode ser definido para qualquer tipo de sinal elétrico, e ele nos diz quanta energia este sinal carrega. É o quociente entre a potência de pico e a potência média (a RMS) que este sinal desenvolve em uma dada carga. Ele pode se expresso em dB, desta forma:</p>
+    <p>Fc (dB) = 10 x Log (P<sub>PEAK</sub>/P<sub>AVG</sub>)</p>
+    <p>(Não se preocupem em decorar esta fórmula, pois sequer vamos usá-la)</p>
+    <p>Uma complicação óbvia é que o valor do Fc envolve a potência de pico ou <u>instantânea</u>, que por definição é um valor que, em uma música, varia o tempo todo. Já a potência média (RMS) é definida em trechos musicais relativamente longos, e é portanto mais fácil de se medir/determinar.</p>
+    <p>Portanto, de cara já devemos ter em mente que o Fc de um programa musical varia o tempo todo... a solução é então usar o Fc de "pior caso" – ou seja, o Fc de <u>valor mais baixo</u> que puder ser encontrado em um determinado programa musical. Podemos fazer isso sistematicamente com muitos estilos musicais e assim obter um resumo, a saber:</p>
+    <div class="np-table-wrap"><table class="np-table" class="table table-striped table-bordered">
+    <tbody>
+    <tr><td><strong>Tipo de sinal/programa</strong></td><td><strong>Fator de crista</strong></td><td><strong>Potência desenvolvida no falante por um amp de 100W</strong></td></tr>
+    <tr><td>Senóide pura (sem clipar)</td><td>3dB</td><td>100W</td></tr>
+    <tr><td>Graves de música eletrônica</td><td>9dB</td><td>25W</td></tr>
+    <tr><td>Médio-graves de guitarra de Rock pesado</td><td>10dB</td><td>20W</td></tr>
+    <tr><td>Música clássica densa em full range</td><td>10dB</td><td>20W</td></tr>
+    <tr><td>Ruído rosa puro (sem clipar)</td><td>12dB</td><td>12,5W</td></tr>
+    <tr><td>Pop/Rock comum ou Axé em full range</td><td>12dB</td><td>12,5W</td></tr>
+    <tr><td>Jazz comum em full range</td><td>15dB</td><td>6,5W</td></tr>
+    <tr><td>Voz humana falada (locução)</td><td>15dB</td><td>6,5W</td></tr>
+    </tbody>
+    </table></div>
+    <p>TABELA-1</p>
+    <p>Vejam que a última coluna nos mostra quanta potência um amplificador-exemplo de 100W desenvolve no alto-falante ao reproduzir os diferentes tipos de programa musicais.</p>
+    <p>E reparem que, <u>quanto <strong>mais</strong> alto for o Fc, <strong>menos</strong> potência</u> o amplificador desenvolverá no alto-falante. Este é o ponto! (se não entendeu isso, melhor voltar e ler novamente)</p>
+    <p>Com ruído rosa (nosso melhor sinal de referência) o amp-exemplo "de 100 Watts" desenvolverá apenas 12,5W no alto-falante...</p>
+    <p>Poderemos extrair dele 25W com música eletrônica muitíssimo comprimida, e 20W com rock bem pesado (daqueles onde só se ouve a guitarra-base e bateria).</p>
+    <p>Indo além, quando passarmos para programas mais "leves", como uma música pop, um axé bem animado, ou mesmo um rock mais "normal" (que consistem a maioria dos programas musicais do nosso cotidiano) a coisa complica ainda mais! Extrairemos apenas cerca de 12,5W dele... (a mesma do ruído rosa) e se gostarmos de Jazz teremos que nos contentar com apenas 6,5W sendo desenvolvidos no alto-falante...</p>
+    <p><strong>Para que fique claro</strong>: isto <strong>não</strong> é culpa do amplificador, nem da caixa acústica, nem da mesa de som, nem do alto-falante... não é culpa de <strong>nenhum equipamento</strong>! Se deve, sim, ao <u>conteúdo energético</u> que cada tipo de programa possui. <strong>E este conteúdo energético diminui conforme o fator de crista aumenta</strong>.</p>
+    <p><strong>Curiosidade</strong>: este exato raciocínio nos esfrega na cara o quão inútil é um amplificador desenvolvido para reproduzir plenamente o sinal senoidal puro (Fc = 3dB). Algo que alguns acham o máximo, mas que é tão útil quanto buzina de avião!</p>
+    <p><strong>COMO COMPENSAR ISTO E EXTRAIR O MAX DO ALTO-FALANTE?</strong></p>
+    <p>Ora, se o nosso amp-exemplo de 100W, com graves de música eletrônica, conseguirá desenvolver apenas 25W no alto-falante sem clipar, então para obter a potência de 100W que inicialmente pretendíamos, devemos utilizar um amp "de 400W" – pois apenas ¼ da potência deste será desenvolvida neste falante (400W/4 = 100W).</p>
+    <p>Em resumo: se queremos extrair dos alto-falantes o máximo das suas capacidades de potência, deveremos <u>compensar</u> a falta de potência imposta pelo sinal musical <strong>quadruplicando</strong> a potência do amplificador, e aumentando o volume! Isto se estivermos lidando com programas de Fc = 9dB, como graves de música eletrônica.</p>
+    <p>Para o caso mais geral de programas musicais de Fc = 12dB, teríamos que fazer a potência do amplificador com 8x a potência do alto-falante!</p>
+    <p>E é isso!</p>
+    <p>Uma opção (bem ruim) seria reduzir o fator de crista do sinal de programa... fazendo-o passar por um compressor de mix e "achatar" a sua dinâmica através de um RATIO bem alto, algo como 10:1 ou 20:1 – pois quanto mais comprimido for o sinal de programa, menor será o seu Fc. Por este motivo as músicas eletrônicas e, especial, as de rave, costumam possuir Fc extremamente baixos, algo ao redor de 7-9dB. O problema é que, ao comprimir na quantidade necessária para ser significativo, estaremos "matando" toda a dinâmica da música!</p>
+    <p>Na prática, em performances ao vivo (shows) é até legal aplicar um compressor de mixagem, mas com o RATIO bem baixinho (tipicamente 1,5:1) – isto ajuda a dar uma sensação de "som de estúdio", graças a dinâmica mais bem comportada. Porém isto não bastará para diminuir o Fc significativamente.</p>
+    <p>Portanto, o jeito fácil não existe... tem que ser do jeito difícil mesmo!</p>
+    <p><strong>A SOLUÇÃO IDEAL – EXEMPLO PRÁTICO COM SUBWOOFERS</strong></p>
+    <p>Tenho 4 subwoofers de 800W RMS. Que potência de amplificador devo escolher para neles?</p>
+    <p>Se olharmos para a tabela, veremos que ao usar um amp com exatos 800W por falante (ou 3200W no total), ao tocar graves de música eletrônica estilo rave (o pior dos casos) vamos desenvolver nestes falantes apenas ¼ disso... ou 200W em cada um.</p>
+    <p>Vai tocar bem, <u>pode até ser suficiente</u>... mas, é tudo o que o falante tem a oferecer? Certamente que não! Pois ele suporta, segundo o fabricante, 800W – quatro vezes isto!</p>
+    <p>Então, se quisermos tirar tudo o que este falante tem a oferecer - <u>embora não sejamos obrigados a isso</u> - teremos que <strong>quadruplicar a potência aplicada a eles, pois 4x200W = 800W</strong>. Assim teremos compensado o efeito redutor do fator de crista na potência final.</p>
+    <p>Em outras palavras: teríamos que usar um amplificador que nos dê <strong>3200W por alto-falante</strong>, com <strong>12.800W totais portanto... isso para tocar apenas 4x falantes de 800W!</strong></p>
+    <p><strong>A SOLUÇÃO DE COMPROMISSO: O FAMOSO "DOBRO DA POTÊNCIA"</strong></p>
+    <p>Por toda a óbvia dificuldade de conseguir (e pagar por) amplificadores tão potentes, chegamos a um fator de compromisso <strong>de usar o dobro</strong> (ao invés do quádruplo) da potência. Ainda estaríamos na metade da capacidade física do alto-falante, mas com uma interessante folga em outros aspectos, como no calor produzido pelas bobinas móveis, que sendo menor, resultará em menor compressão térmica, que em última análise liberará mais potência (pois a compressão térmica sempre acaba "roubando" uma parcela da pressão sonora dos alto-falantes).</p>
+    <p>Então assim chegamos a nossa famosa (e boa) regra de dimensionar o amplificador com o <strong>dobro</strong> da potência <strong>RMS</strong> do alto-falante.</p>
+    <p><strong>TEM QUE SER SEMPRE ASSIM?</strong></p>
+    <p><strong>Não necessariamente</strong>. Pois nem sempre precisaremos de 100% da pressão sonora que os alto-falantes podem produzir. Se usar um amp menor de boa qualidade (que tenha um bom limiter integrado e que não gere distorção quando sobrecarregado) e se, com este arranjo a pressão for suficiente, não haverá nenhum problema em se usar desta forma.</p>
+    <p><strong>Frisamos que</strong>, nesta situação, <u>é de suma importância que o amplificador não produza distorção</u> (não clipe) <u>quando sobrecarregado</u> (sobre-excitado). Algo que amplificadores modernos não costumam deixar acontecer.</p>
+    <p>Em som ambiente, por exemplo, o que geralmente queremos é apenas cobrir o ruído ambiente de fundo. Então nestes casos empiricamente "casamos" a potência amp/falante em 1:1, algo confirmado pela prática e que funciona muito bem nestas aplicações.</p>
+    <p><strong>Em outras palavras</strong>: terá que ser assim apenas se vc deseja extrair a <strong>máxima pressão sonora</strong> que um determinado alto-falante é capaz de produzir.</p>
+    <p><strong>ESSA PRÁTICA DE DOBRAR A POTÊNCIA DO AMPLIFICADOR É PERIGOSA PARA OS FALANTES?</strong></p>
+    <p>Só se formos desatentos e/ou desleixados e permitirmos que haja distorção e/ou clips na cadeia do áudio - <strong>em qualquer ponto da cadeia do áudio!</strong> (e não apenas nos amplificadores)</p>
+    <p>Então não basta apenas cuidar para que os amplificadores não clipem (algo que raramente ocorre em amplificadores com tecnologia deste século, como já dito) mas devemos também cuidar para que mesas de som e eventuais periféricos não clipem. Se houver distorção, <u>em qualquer ponto da cadeia,</u> os falantes vão queimar facilmente!</p>
+    <p><strong>Importante dizer que, com distorção severa na cadeia do áudio, nem precisaremos do "dobro da potência" para queimar os alto-falantes...</strong> Isto <strong>vai</strong> acontecer mesmo com amps de baixa potência - <strong>basta deixar o sinal clipar em qualquer ponto da cadeia de áudio!</strong> (a razão disto é discutida <a title="Clipping vs Alto-Falantes" href="/images/downloads/artigos/Barros_Clipping%20x%20Falantes.pdf">neste artigo</a> — PDF recuperado, ver `blog-imagens/pdfs-referenciados/`).</p>
+    <p>E para falantes particularmente sensíveis, vale ajustar os limiters com cuidado, usando um bom processador.</p>
+    <p><strong>E OS DRIVERS E TWEETERS? DEVEMOS USAR O DOBRO DE POTÊNCIA TAMBÉM?</strong></p>
+    <p><strong>NÃO</strong>. Pois devido a uma discrepância provocada pela forma como as normas mandam proceder na medida de potência destes transdutores c/ crossovers ativos, <strong>os drivers e tweeters são a excessão!</strong> Para eles, bastam amplificadores com a "potência RMS casada", e é altamente recomendável ativar os limiters do processador!</p>
+    <p><strong>POSSO USAR AMPLIFICADORES "GRANDES" COM DRIVERS E TWEETERS?</strong></p>
+    <p><strong>Pode sim!</strong> Se o amp tiver mais potência que a necessária, ajuste os limiters do seu processador para deixar passar aprox. a potência RMS nominal dos mesmos. Nem é preciso dizer que distorções e clips no caso de drivers e tweeters é algo avassalador. É a maneira mais rápida de queimá-los!</p>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--dark">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

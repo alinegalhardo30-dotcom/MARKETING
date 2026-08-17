@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solicitar Atendimento — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>Solicitar Atendimento</span>
+<span style="color:#6b6b6b">surface → dark → light → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--surface np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Suporte · Chamado</span>
+    <h1 class="np-h1 np-page-hero__title">Abra um chamado de atendimento.</h1>
+    <p class="np-page-hero__lead">Preencha o formulário com os dados do produto e anexe a Nota Fiscal. Se preferir resolver conversando, o WhatsApp continua sendo o caminho mais rápido.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--primary" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Quero%20abrir%20um%20chamado%20de%20atendimento%20t%C3%A9cnico.">Prefiro o WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--dark">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Formulário</span>
+      <h2 class="np-h2">Este bloco recebe o formulário no Joomla.</h2>
+      <p>Publique aqui o formulário do visForms na posição <code>content-bottom</code> desta página. Os campos abaixo são a especificação combinada no projeto.</p>
+    </div>
+    <div class="np-table-wrap">
+      <table class="np-table np-table--responsiva">
+        <thead><tr><th>Campo</th><th>Tipo</th><th>Obrigatório</th></tr></thead>
+        <tbody>
+          <tr><td data-rotulo="Campo">Nome completo</td><td data-rotulo="Tipo">Texto</td><td data-rotulo="Obrigatório">Sim</td></tr>
+          <tr><td data-rotulo="Campo">E-mail</td><td data-rotulo="Tipo">E-mail</td><td data-rotulo="Obrigatório">Sim</td></tr>
+          <tr><td data-rotulo="Campo">Telefone / WhatsApp</td><td data-rotulo="Tipo">Texto</td><td data-rotulo="Obrigatório">Sim</td></tr>
+          <tr><td data-rotulo="Campo">Tipo de atendimento</td><td data-rotulo="Tipo">Lista: Pré-venda · Pós-venda · Garantia · Orçamento</td><td data-rotulo="Obrigatório">Sim</td></tr>
+          <tr><td data-rotulo="Campo">Modelo do produto</td><td data-rotulo="Tipo">Lista de produtos</td><td data-rotulo="Obrigatório">Condicional — pós-venda/garantia</td></tr>
+          <tr><td data-rotulo="Campo">Número de série</td><td data-rotulo="Tipo">Texto</td><td data-rotulo="Obrigatório">Condicional — pós-venda/garantia</td></tr>
+          <tr><td data-rotulo="Campo">Nota Fiscal</td><td data-rotulo="Tipo">Upload de arquivo (PDF/imagem)</td><td data-rotulo="Obrigatório">Condicional — garantia</td></tr>
+          <tr><td data-rotulo="Campo">Descrição do problema ou da necessidade</td><td data-rotulo="Tipo">Área de texto</td><td data-rotulo="Obrigatório">Sim</td></tr>
+          <tr><td data-rotulo="Campo">Aceite de contato</td><td data-rotulo="Tipo">Checkbox</td><td data-rotulo="Obrigatório">Sim</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Enquanto o formulário não está no ar</span>
+      <h2 class="np-h2">Use os canais diretos.</h2>
+    </div>
+    <div class="np-grid np-grid--3"><a class="np-card" href="https://wa.me/551933277101?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Next%20Pro"><h3>WhatsApp</h3><p>(19) 3327-7101 — o canal mais rápido para qualquer tipo de atendimento.</p></a><a class="np-card" href="/suporte/assistencias-autorizadas"><h3>Assistência perto de você</h3><p>Rede autorizada em 9 estados.</p></a><a class="np-card" href="/suporte/assistencia-fabrica"><h3>Envio para a fábrica</h3><p>Quando não há assistência na sua região.</p></a></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Prefere resolver falando?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Quero%20abrir%20um%20chamado%20de%20atendimento%20t%C3%A9cnico.">WhatsApp (19) 3327-7101</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

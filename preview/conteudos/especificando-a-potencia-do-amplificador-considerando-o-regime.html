@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Especificando a potência do amplificador considerando o regime — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>Especificando a potência do amplificador considerando o regime</span>
+<span style="color:#6b6b6b">dark → light → surface → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--dark np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Dicas</span>
+    <h1 class="np-h1 np-page-hero__title">Especificando a potência do amplificador considerando o regime</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-light" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <h4 style="text-align: left;"><strong>Especificando a potência do amplificador considerando o regime</strong></h4>
+    <p style="text-align: justify;">A filosofia de apresentação de potência utilizada pela Next Pro é a que leva em consideração o regime em que o amplificador irá trabalhar. Nada mais justo saber <strong>antecipadamente</strong> que desempenho o produto pretendido irá apresentar nas <strong>reais condições em que ele irá operar</strong>! Tal abordagem além de justa é também a mais econômica; pois imagine adquirir um produto concebido para o duro regime de música eletrônica das festas rave se a sua intenção é sonorizar uma escola!</p>
+    <p style="text-align: justify;">Por este ponto de vista, especificar um amplificador considerando o regime, é, sem sombra de dúvidas, o modo mais honesto de todos; pois o usuário poderá escolher o produto mais apropriado, sempre considerando a finalidade e o custo/benefício.</p>
+    <p style="text-align: justify;">Mas como a potência do amplificador é medida dentro deste conceito? Ora, o modo de se medir não difere em nada do "tradicional". Em verdade o que muda é tão somente o <strong>sinal de teste</strong>, pois agora levamos em consideração o seu "fator de crista" (em inglês, <em>crest factor</em>), veja a tabela:</p>
+    <div class="np-table-wrap"><table class="np-table" class="rt responsive table table-striped table-bordered">
+    <tbody>
+    <tr><td><strong>Sinal senoidal de 1kHz</strong></td><td><strong>Fator de crista (Crest factor) = P<sub>PEAK</sub> / P<sub>RMS</sub></strong></td><td><strong>Dinâmica = P<sub>RMS_CURTA</sub> / P<sub>RMS_LONGA</sub></strong></td><td><strong>Programa musical similar</strong></td></tr>
+    <tr><td>Normal, ou contínuo</td><td>3dB</td><td>0x (não tem dinâmica)</td><td>Não existe</td></tr>
+    <tr><td>Em <em>burst</em>, 16ms_ON / 16ms_OFF</td><td>6dB</td><td>2x</td><td>Não existe</td></tr>
+    <tr><td>Em <em>burst</em>, 8ms_ON / 24ms_OFF</td><td>9dB</td><td>4x</td><td>Ruído rosa muito clipado / Música muito comprimida / Música eletrônica "tipo rave" / Sinal filtrado de subwoofer</td></tr>
+    <tr><td>Em <em>burst</em>, 4ms_ON / 28ms_OFF</td><td>12dB</td><td>8x</td><td>Ruído rosa puro, sem clipar / Música pop/rock / Música em geral / Sinal filtrado de médio-agudos (Fc &gt; 500Hz)</td></tr>
+    <tr><td>Em <em>burst</em>, 2ms_ON / 30ms_OFF</td><td>15dB</td><td>16x</td><td>Música jazz / Música suave / Voz falada / Sinal filtrado de agudos (Fc &gt; 2kHz)</td></tr>
+    </tbody>
+    </table></div>
+    <p style="text-align: justify;">Para medir a potência pelo "método tradicional" aplicamos um sinal senoidal contínuo (puro) no amplificador e o levamos até o seu limite. Sem entrar em detalhes (que é um assunto para as normas), ao chegarmos neste limite medimos o valor da tensão máxima <em>V<sub>P</sub></em> em um osciloscópio e com ela fazemos a seguinte conta:</p>
+    <p><img style="float: left; margin: 0px 30px 30px 0px;" src="../../imagens/blog/specs-power/sinewave-3.png" width="450" height="361" alt="PRMS = VP2/2*RL" /></p>
+    <p style="text-align: justify;"><em>P<sub>RMS</sub> = V<sub>P</sub><sup>2</sup>/2*R<sub>L</sub></em></p>
+    <p style="text-align: justify;">Onde <em>R<sub>L</sub></em> é a carga (em ohms) aplicada na saída do amplificador. Esta é a potência RMS no regime senoidal puro, ou com <strong>fator de crista (crest factor) = 3dB</strong>. O que mudará para medir nos regimes seguintes? Nada! Somente trocamos o sinal e repetimos o mesmo procedimento.</p>
+    <h4 style="text-align: left;"><strong>Como interpretamos os resultados?</strong></h4>
+    <p style="text-align: justify;">Sem segredos. Basta olhar para a tabela. Se o amplificador tiver 1000W c/ <em>crest factor</em> = 12dB, ele tocará como se espera de um amplificador de 1000W com música tipo pop/rock, ou música em geral. Se utilizarmos este mesmo amplificador com programas típicos de 15dB, como jazz ou música suave, provavelmente ele soará com mais potência. Cheque as especificações... Geralmente os amps sempre darão mais potência com sinais de <em>crest factor</em> mais altos (mas isso não é uma regra, pois dependerá da filosofia de projeto de cada um).</p>
+    <p style="text-align: justify;">Por outro lado, se utilizarmos este mesmo amplificador com música eletrônica muito comprimida, como música rave, ou ainda em vias filtradas de subwoofer de música eletrônica, estaremos encarando um <em>crest factor</em> de aproximadamente 9dB; e é provável que nestas condições ele soe como se a sua potência fosse menor que 1000W... (mas isso novamente não é uma regra). O correto é consultar qual é a sua real potência neste regime <em>crest factor</em> = 9dB. Se essa especificação não estiver declarada, podemos presumir que o fabricante não considera este modelo adequado para este regime, e é provável que ele possua outra linha de amplificadores dedicada a esta aplicação <em>mais pesada</em>.</p>
+    <h4 style="text-align: left;"><strong>E o dimensionamento amplificador/alto-falante?</strong></h4>
+    <p style="text-align: justify;"><strong>Use sempre a potência especificada no regime em que o amplificador irá trabalhar!</strong> Na prática, intuitivamente sempre fizemos isso... Pois quando selecionávamos um amplificador para "fazer sub´s num trio elétrico ou em shows" a escolha sempre recaía em um amp dos "parrudos"... Por outro lado, ao escolher um amplificador para instalação de som ambiente em uma escola ou academia sempre escolhíamos um amp "dos leves"... não foi sempre assim? Pois bem, podemos continuar fazendo a mesma coisa – só que agora com base técnica!</p>
+    <h4 style="text-align: left;"><strong>Curiosidade...</strong></h4>
+    <p style="text-align: justify;">Se determinado amplificador possuir potência especificada em regime 9dB, mas não abaixo e nem acima de 9dB, o que isso pode significar?</p>
+    <p style="text-align: justify;">Ora, o que o fabricante estará dizendo é que, este amplificador foi otimizado e terá o seu melhor custo/benefício em regimes onde o <em>crest factor</em> seja 9dB, ou seja, música muito comprimida, ou regime <em>pesado</em> em geral. Mas se ele for submetido ao regime 3dB (senoidal puro), por exemplo, o mais provável é que desenvolva uma potência bem menor, como se estivesse se protegendo... Por outro lado, certamente não haverá nenhum problema em utilizá-lo com um <em>crest factor</em> <strong>maior</strong> que os 9dB para o qual a sua potência foi declarada, como os 12dB da música em geral, ou os 15dB da música jazz, mas é provável que resulte em uma solução anti-econômica. Para essa aplicação o melhor custo/benefício será obtido com um amplificador declarado para 12-15dB.</p>
+    <h4 style="text-align: left;"><strong>Ou seja, podemos tirar duas regras básicas:</strong></h4>
+    <ul>
+    <li style="text-align: justify;">Usar em <em>crest factor</em> <strong>maior</strong> <strong>não tem problema nenhum</strong> - a potência e o headroom serão até maiores, mas pode resultar em uma solução cara;</li>
+    <li style="text-align: justify;">Usar em <em>crest factor</em> <strong>menor</strong> que o "natural" do amplificador não é legal... Pode resultar em potência menor que a especificada.</li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--surface">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>

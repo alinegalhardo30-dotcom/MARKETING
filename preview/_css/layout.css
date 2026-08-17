@@ -1,0 +1,121 @@
+/* ==========================================================================
+   NEXT PRO — LAYOUT DE PÁGINA (seções específicas de template, não componentes
+   genéricos reutilizáveis — esses ficam em components.css)
+   ========================================================================== */
+
+/* ---------- Skip link / topo utilitário ---------- */
+.np-topbar {
+  background: var(--np-dark-800);
+  color: rgba(255,255,255,0.75);
+  font-size: var(--np-fs-xs);
+}
+.np-topbar .np-container { display: flex; justify-content: space-between; align-items: center; padding-block: var(--np-space-2); gap: var(--np-space-4); flex-wrap: wrap; }
+.np-topbar a { color: rgba(255,255,255,0.85); }
+.np-topbar a:hover { color: var(--np-green); }
+
+/* ---------- Hero (Home) ---------- */
+.np-hero {
+  position: relative;
+  background: var(--np-dark-800);
+  color: var(--np-white);
+  overflow: hidden;
+  padding-block: var(--np-space-32) var(--np-space-24);
+}
+.np-hero::before {
+  /* textura técnica sutil, sem depender de imagem — grid de linhas finas
+     lembrando trilha de PCB, reforça "engenharia" sem poluir */
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(25,216,152,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25,216,152,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at top right, black, transparent 70%);
+  pointer-events: none;
+}
+.np-hero__inner { position: relative; max-width: 46rem; }
+.np-hero__title { margin-top: var(--np-space-4); }
+.np-hero__actions { display: flex; flex-wrap: wrap; gap: var(--np-space-4); margin-top: var(--np-space-8); }
+.np-hero__proof {
+  display: flex; flex-wrap: wrap; gap: var(--np-space-8);
+  margin-top: var(--np-space-16);
+  padding-top: var(--np-space-8);
+  border-top: var(--np-border-dark);
+}
+.np-hero__proof-item strong { display: block; font-family: var(--np-font-display); font-size: var(--np-fs-2xl); color: var(--np-green); }
+.np-hero__proof-item span { font-size: var(--np-fs-sm); color: rgba(255,255,255,0.6); }
+
+/* ---------- Diferenciais (grid de ícones) ---------- */
+.np-diferencial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-3);
+  padding: var(--np-space-6);
+  border-radius: var(--np-radius-lg);
+  border: var(--np-border);
+  transition: border-color var(--np-duration-base) var(--np-ease), transform var(--np-duration-base) var(--np-ease);
+}
+.np-diferencial:hover { border-color: var(--np-green); transform: translateY(-2px); }
+.np-diferencial__icon {
+  width: 44px; height: 44px;
+  border-radius: var(--np-radius-md);
+  background: var(--np-green-100);
+  color: var(--np-green-700);
+  display: flex; align-items: center; justify-content: center;
+}
+.np-diferencial h3 { font-size: var(--np-fs-lg); margin: 0; }
+.np-diferencial p { font-size: var(--np-fs-sm); margin: 0; }
+
+/* ---------- Fabricação (seção escura com etapas) ---------- */
+.np-fabricacao { background: var(--np-dark-800); color: var(--np-white); }
+.np-fabricacao__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--np-space-6);
+  margin-top: var(--np-space-12);
+}
+@media (min-width: 768px) { .np-fabricacao__steps { grid-template-columns: repeat(3, 1fr); } }
+.np-fabricacao__step { padding: var(--np-space-6); border: var(--np-border-dark); border-radius: var(--np-radius-md); }
+.np-fabricacao__step-num { font-family: var(--np-font-mono); color: var(--np-green); font-size: var(--np-fs-sm); }
+
+/* ---------- Aplicações ---------- */
+.np-aplicacao-card {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--np-radius-md);
+  overflow: hidden;
+  background: var(--np-gray-100);
+  display: flex; align-items: flex-end;
+}
+.np-aplicacao-card__label {
+  position: relative;
+  padding: var(--np-space-4);
+  font-family: var(--np-font-display);
+  font-weight: 600;
+  color: var(--np-white);
+  background: linear-gradient(to top, rgba(23,23,23,0.85), transparent);
+  width: 100%;
+}
+
+/* ---------- CTA comercial (faixa) ---------- */
+.np-cta-band {
+  background: linear-gradient(135deg, var(--np-green) 0%, var(--np-green-600) 100%);
+  color: var(--np-dark-800);
+  border-radius: var(--np-radius-lg);
+  padding: var(--np-space-12) var(--np-space-8);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-6);
+  align-items: center;
+  justify-content: space-between;
+}
+.np-cta-band h2 { margin: 0; }
+
+/* ---------- Suporte (home) ---------- */
+.np-suporte-card { text-align: left; }
+
+/* ---------- Utilitários de visibilidade ---------- */
+.np-hide-mobile { display: none; }
+@media (min-width: 768px) { .np-hide-mobile { display: initial; } }
+.np-hide-desktop { display: initial; }
+@media (min-width: 768px) { .np-hide-desktop { display: none; } }

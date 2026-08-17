@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A tecnologia de fontes chaveadas - tópicos — Next Pro (preview)</title>
+<link rel="stylesheet" href="../_css/fonts.css" />
+<link rel="stylesheet" href="../_css/tokens.css" />
+<link rel="stylesheet" href="../_css/base.css" />
+<link rel="stylesheet" href="../_css/components.css" />
+<link rel="stylesheet" href="../_css/layout.css" />
+<link rel="stylesheet" href="../_css/pages.css" />
+<link rel="stylesheet" href="../_css/editorial.css" />
+<style>
+  .pv-bar{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #d9d9d9;
+    padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center;font-size:.8rem}
+  .pv-bar a{font-weight:600}
+  .pv-wrap{max-width:1280px;margin-inline:auto;padding-inline:1.25rem;padding-block:1.5rem}
+</style>
+</head>
+<body class="np-page">
+<div class="pv-bar"><a href="../index.html">◀ Todas as páginas</a><span>A tecnologia de fontes chaveadas - tópicos</span>
+<span style="color:#6b6b6b">surface → light → dark → green</span></div>
+<main class="pv-wrap">
+<section class="np-band np-band--surface np-page-hero">
+  <div class="np-band__inner">
+    <span class="np-eyebrow">Conteúdos · Tecnologia</span>
+    <h1 class="np-h1 np-page-hero__title">A tecnologia de fontes chaveadas - tópicos</h1>
+    <p class="np-page-hero__lead">Artigo técnico escrito por Marcelo Barros, Diretor de Tecnologia da Next Pro.</p>
+    <div class="np-page-hero__actions">
+      <a class="np-btn np-btn--outline-dark" href="/conteudos">Ver todos os conteúdos</a>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--light">
+  <div class="np-band__inner">
+    <div class="np-prose np-prose--wide">
+    <h4 style="text-align: left;"><strong>Fontes chaveadas em áudio</strong></h4>
+    <p style="text-align: justify;">Neste artigo discutiremos alguns tópicos acerca de fontes chaveadas aplicadas em amplificadores de potência, no formato pergunta/resposta.</p>
+    <h4 style="text-align: justify;"><strong>O que é "Fonte Chaveada" ou SMPS (switch mode power supply)?</strong></h4>
+    <p style="text-align: justify;">Tipo de fonte que faz a conversão da frequência da rede elétrica de 50-60Hz para frequências muito mais altas (tipicamente acima dos 20kHz) antes de passar a energia por um transformador isolador/distribuidor de tensões. A tecnologia de fontes chaveadas é um dos campos da eletrônica que mais cresce em todo o mundo e um dos mais destacados assuntos; devido principalmente ao crescente (e mundialmente presente) problema da escassez de energia elétrica. Em inglês esse ramo da engenharia é conhecido por <strong>Power Conversion</strong> (Conversão de Potência), possuindo muitas ramificações; todas presentes em muitos aspectos de nossa vida moderna (produtos eletrônicos domésticos, industriais, portáteis, iluminação, automotivos, aeroespaciais e muitos outros);</p>
+    <h4 style="text-align: justify;"><strong>Fontes Chaveadas são superiores as fontes convencionais?</strong></h4>
+    <p style="text-align: justify;">Não existe um único aspecto em que as fontes chaveadas não sejam atualmente superiores as fontes convencionais, exceto talvez pela emissão de ruídos. A superioridade das fontes chaveadas é tamanha que hoje em dia as fontes convencionais estão praticamente extintas de nossa vida cotidiana, sem mencionar os casos em que as fontes convencionais sequer podem ser aplicadas;</p>
+    <p style="text-align: justify;">As vantagens mais evidentes das SMPS:</p>
+    <ul>
+    <li><strong>São mais leves e compactas que fontes convencionais</strong>. E dependendo da tecnologia empregada essa redução em peso e volume chega a ser drástica;</li>
+    <li><strong>Eficiência superior:</strong> isto é, gasta-se menos energia para se obter o mesmo resultado;</li>
+    <li><strong>Aquecimento mais baixo</strong> (é devido a essa maior eficiência);</li>
+    <li><strong>Possibilidades de conversão quase ilimitadas</strong>. Podem ser usadas para abaixar tensões, isolar, elevar, inverter, espelhar, como fontes de corrente, etc;</li>
+    </ul>
+    <p style="text-align: justify;">As desvantagens:</p>
+    <ul>
+    <li><strong>Ruídos e interferências</strong>, como já citado. Porém um projeto cuidadoso e obediente as normas pode contornar essa deficiência com relativa facilidade;</li>
+    <li><strong>Complexidade e confiabilidade</strong>: as SMPS são muito mais complexas do que as fontes convencionais e isto pode ter algum impacto na confiabilidade. Novamente, um projeto cuidadoso e técnicas refinadas de proteção podem reduzir esse problema de tal maneira que hoje em dia, não é raro as SMPS serem mais robustas e confiáveis que fontes convencionais equivalentes;</li>
+    <li><strong>Dificuldade de projeto</strong>: o projeto de uma SMPS é totalmente diferente e muito mais complicado do que uma fonte convencional equivalente. O projetista precisa ser fluente em uma série de áreas diferentes (eletrônica de potência, magnetismo, teoria da realimentação, eletrônica analógica, eletrônica digital, interferência eletromagnética, ter o domínio de softwares de cálculo numérico e outros);</li>
+    <li><strong>Necessidade de controle rigoroso na produção em série</strong>: fontes chaveadas são especialmente sensíveis as inevitáveis variações de matéria-prima presentes em uma produção em série, especialmente se forem de muito alta potência;</li>
+    </ul>
+    <h4 style="text-align: justify;"><strong>É verdade que as fontes chaveadas só se prestam a baixas potências?</strong></h4>
+    <p style="text-align: justify;"><strong>Não</strong>. Este é um <strong>mito</strong> que provavelmente surgiu das dificuldades técnicas de se projetar uma SMPS de alta potência. Outra razão (talvez ligada a esta) reside no fato de que muitos dos grandes fabricantes mundiais na área de semicondutores de potência disponibilizam soluções (quase) prontas, na forma de circuitos integrados e softwares de desenvolvimento de SMPS de baixas/médias potências (geralmente abaixo de 200W). Estas ferramentas e facilidades, geralmente baseadas em resultados tabelados, infelizmente não se aplicam a projetos avançados de alta potência; onde frequentemente o projetista tem que escrever seus próprios softwares e rotinas de cálculo numérico;</p>
+    <h4 style="text-align: justify;"><strong>O que são fontes ressonantes?</strong></h4>
+    <p style="text-align: justify;">Tipo de SMPS que faz uso de correntes ou tensões senoidais, ao invés das tradicionais ondas quadradas. A conversão quadrada-senoidal é feita por circuitos-tanque ressonantes tipo LC. Técnicas ressonantes aplicadas em SMPS possibilitam recursos poderosos, sendo os principais:</p>
+    <ul>
+    <li>Transição entre estados ON/OFF (chaveamento) do tipo "sem perdas". No jargão da eletrônica de potência isso é conhecido por "soft-switching" (transição suave) ou ainda "transição a tensão zero" (ZVS) ou a "corrente-zero" (ZCS);</li>
+    <li>Nas topologias ressonantes, elementos de circuito normalmente considerados indesejáveis (resistências, capacitâncias e indutâncias parasitas) costumam jogar a favor do aumento da eficiência e da confiabilidade. Em SMPS comuns esses elementos prejudicam grandemente o desempenho, podendo inclusive provocar sua queima;</li>
+    </ul>
+    <p style="text-align: justify;">O uso inteligente destes recursos permitem uma <strong>redução drástica</strong> do stress e do calor gerado pelos semicondutores (transistores e diodos), bem como da emissão eletromagnética (ruídos e interferências), além de aumentar a robustez da fonte em si. Este é um dos assuntos mais pesquisados em todo o mundo. Através destas técnicas pode-se aumentar a potência de uma SMPS sem um aumento proporcional em volume, peso e dissipação de calor. Tais técnicas também geram uma grande melhora na confiabilidade.</p>
+    <h4 style="text-align: justify;"><strong>Existe alguma verdade na afirmação "fontes chaveadas não aguentam trabalhar no Brasil porque a nossa rede elétrica é ruim"?</strong></h4>
+    <p style="text-align: justify;"><strong>Nenhuma!</strong> Este talvez seja um dos mitos mais propagados e aceitos do mercado de áudio no Brasil. A malha elétrica Brasileira é reconhecida como boa e confiável no mundo todo. E quando existem falhas, estas geralmente são devido a instalações domésticas ruins, que são de responsabilidade dos proprietários do imóvel. Uma prova disso é que no ramo industrial esse mito é quase que totalmente desconhecido.</p>
+    <p style="text-align: justify;">A origem deste mito no mercado de áudio brasileiro é provavelmente devido a:</p>
+    <ul>
+    <li>Existência de prédios e casas de show com instalações elétricas inadequadas e/ou de baixa qualidade; fato agravado pela falta de preocupação com o áudio e suas necessidades que arquitetos e engenheiros civis geralmente demonstram. Muitas vezes tais necessidades somente são lembradas na fase final da obra, quando não há muito mais o que fazer, a não ser improvisar! Alguns sequer são capazes de suportar sistemas de áudio e iluminação simultaneamente. Daí vem boa parte da história da "rede elétrica ruim". Na verdade deveria ser: "das instalações prediais ruins";</li>
+    <li>Dificuldades técnicas de se projetar e produzir fontes chaveadas de alta potência realmente confiáveis;</li>
+    <li>Temor de alguns fabricantes nacionais frente aos importados de maior tecnologia. Alguns destes fabricantes, incapazes de desenvolver amplificadores realmente modernos, encorajam tal mito;</li>
+    <li>Os amps com fontes chaveadas mais antigos (naturalmente, os "pioneiros") eram realmente mais susceptíveis a defeitos de vários tipos e não apenas nos estágios de alimentação (quem não se lembra das antigas Carvers?). Também eram mais exigentes quanto a voltagem de alimentação. Hoje, porém, a situação é inversa: amplificadores realmente modernos se adaptam a tensão e a frequência de rede disponível, e não o contrário (fontes universais);</li>
+    </ul>
+    <h4 style="text-align: justify;"><strong>O que é Fonte Universal?</strong></h4>
+    <p style="text-align: justify;">Tipo de SMPS designada a funcionar em qualquer lugar do mundo (daí o termo "universal"), em diferentes tensões e frequências, mantendo seu desempenho e potência inalterados. É um dos tipos mais sofisticados de SMPS devido a grande diversidade de tensões e frequências de rede encontradas pelo mundo (ou mesmo dentro de um único país);</p>
+    <h4 style="text-align: justify;"><strong>Fonte "automática" ou "bi-volt automático" é um tipo de fonte universal?</strong></h4>
+    <p style="text-align: justify;">Não. Esse tipo de recurso apenas se presta a substituir a antiga "chave 110-220V" por um relê, que faz essa seleção eletronicamente. Para ser universal é necessário que a fonte <strong>compense</strong> os diferentes valores de tensão AC, bem como as suas inevitáveis variações e <strong>mantenha a potência final inalterada</strong>. Também precisam se adequar às diferentes frequências (geralmente dentro da faixa de 43 à 63Hz). Somente por esse último motivo, <strong>jamais</strong> uma fonte convencional de seleção automática poderá receber a designação "universal"; pois que seus transformadores têm de ser calculados para uma frequência fixa de trabalho. Também não existe uma maneira aceitável de fazer uma fonte convencional compensar as variações de tensão AC de modo a manter a potência de saída inalterada;</p>
+    <h4 style="text-align: justify;"><strong>O que é PFC?</strong></h4>
+    <p style="text-align: justify;">É um pré-alimentador, que precede uma SMPS. Sua principal função é a de servir de interface entre a rede elétrica e a SMPS, de modo que a rede "enxergue" uma carga <strong>resistiva</strong>, drenando corrente senoidal, ao invés de <strong>capacitiva</strong> (que gera altos picos de corrente, sobrecargas e distorções exageradas por drenar corrente não-senoidal). É um elemento que contribui para a qualidade da energia elétrica, para a redução do consumo e para a segurança das instalações elétricas. Sua utilização está cada vez mais se tornando obrigatória. Por exemplo, na União Européia todos os equipamentos eletrônicos classificados como sendo de "classe D" (CENELEC EN-61000-3-2 Class-D) tais como: TV´s, monitores de vídeo, computadores, carregadores de bateria, máquinas de lavar, entre outros, têm obrigatoriamente que possuir PFC, o que atesta a sua importância. Por outro lado, fontes SMPS de alta potência <strong>sem</strong> PFC <strong>exigem muito mais</strong> das instalações elétricas, devido aos picos de corrente e as distorções que geram no cabeamento e nos conectores AC;</p>
+    <p style="text-align: justify;">Outro ponto positivo do PFC é que este poderá dar a SMPS a capacidade <strong>universal</strong>, ou seja: a de operar no range 100-260V | 47-63Hz (observar que nem todo PFC tem essa capacidade).</p>
+    <h4 style="text-align: justify;"><strong>Quais os tipos de fontes possuem os amplificadores mais presentes em nosso mercado?</strong></h4>
+    <ul>
+    <li style="text-align: justify;">Crown <strong>Macro-Tech</strong> (antiga): fonte convencional, mono-volt;</li>
+    <li style="text-align: justify;">Crown linhas <strong>iT</strong>, <strong>iT HD</strong> e <strong>Macro Tech-i</strong>: SMPS ressonante com PFC, universal;</li>
+    <li style="text-align: justify;">Crown linhas <strong>Xti</strong> e <strong>XTi-2</strong>: SMPS ressonante, sem PFC, bi-volt automático;</li>
+    <li style="text-align: justify;">Crest Audio <strong>Pro Series</strong> (8002): SMPS ressonante, com PFC, universal;</li>
+    <li style="text-align: justify;">Power Soft <strong>K-Series</strong>: SMPS ressonante, com PFC, universal;</li>
+    <li style="text-align: justify;">Next Pro <strong>Série Pro-R</strong> (todas): SMPS ressonante, com PFC, universal;</li>
+    <li style="text-align: justify;">LabGruppen <strong>FP</strong>, <strong>FP+</strong> e <strong>PLM</strong>: SMPS não-ressonante, sem PFC, mono-volt;</li>
+    <li style="text-align: justify;">Behringer <strong>i-Nuke</strong>: SMPS não-ressonante (NU1000/NU3000) e ressonante (NU6000/NU12000), todas sem PFC, todas mono-volt.</li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+<section class="np-band np-band--dark">
+  <div class="np-band__inner">
+    <div class="np-section-head">
+      <span class="np-eyebrow">Sobre o autor</span>
+      <h2 class="np-h2">Marcelo Barros</h2>
+    </div>
+    <div class="np-prose np-prose--wide"><p><img style="margin: 0px 30px 30px 0px; float: left;" src="../../imagens/blog/empresa-01.jpg" alt="Marcelo Barros, fundador e Diretor de Tecnologia da Next Pro" width="250" height="193" /></p>
+    <p style="text-align: justify;"><strong>Marcelo Barros</strong> é Físico (B.Sci) com Mestrado (M.Sci) em conversão de potência pela Universidade Federal de São Carlos (UFSCar), um dos mais importantes Centros de Pesquisas do hemisfério sul. Foi aluno de ilustres cientistas brasileiros, como o Prof. Dr. G.E. Marques, que no final dos anos 1970 deu importantes contribuições no desenvolvimento dos transistores MOSFET e teve como orientador de pós-graduação o Prof. Dr. Araújo-Moreira, ninguém menos que o inventor do grafite magnético. <strong>Marcelo Barros</strong> pode ser considerado um veterano, pois atua na indústria do áudio desde 1992. Desenvolveu trabalhos em todas as áreas do áudio, desde alto-falantes, passando por processadores de sinal a amplificadores digitais, e assinou o projeto de alguns produtos hoje considerados ícones da indústria brasileira, como o único pré-amplificador de microfone valvular nacional tido ao mesmo nível dos clássicos mundiais (o VT4000). A partir de 2005 especializou-se em fontes chaveadas e amplificadores digitais, publicando vários artigos e liderando o projeto do primeiro amplificador digital profissional c/ fonte chaveada produzido no Brasil (a Série Digilite). Reconhecido como a maior autoridade em amplificadores do Brasil, foi a escolha da ABNT para ser o Coordenador do Grupo de Trabalho de Amplificadores da Comissão de Estudo CB003/CE003-100-001, que elaborou a Norma Brasileira de Amplificadores, a NBR-IEC60268-3. É o fundador e Diretor de Tecnologia da <strong>Next Pro</strong>.</p></div>
+  </div>
+</section>
+
+<section class="np-band np-band--green np-band--tight">
+  <div class="np-band__inner">
+    <div class="np-cta-final">
+      <h2 class="np-h2">Dúvida técnica sobre o seu sistema?</h2>
+      <div class="np-cta-final__actions">
+        <a class="np-btn np-btn--outline-dark" href="https://wa.me/551933277101?text=Ol%C3%A1%21%20Li%20um%20artigo%20no%20site%20e%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica.">Falar com a engenharia</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="../_js/main.js" defer></script>
+</body>
+</html>
