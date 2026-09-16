@@ -39,12 +39,12 @@ add(f'<rect width="{W}" height="{H}" fill="url(#bg)"/>')
 add(f'<rect width="{W}" height="{H}" fill="url(#glow)"/>')
 
 # ---- logo --------------------------------------------------------------
-add(logo.mark(150, 472, 200, 212, uid="m1"))
+add(logo.mark(150, 472, 212, 212, uid="m1"))
 
 CAP = 72
 size = CAP / 0.720
-tr = lib.fit_tracking(orb8, "NEXT PRO", size, 612)
-d, _ = lib.text_path(orb8, "NEXT PRO", size, tracking=tr, x=384, y=616)
+tr = lib.fit_tracking(orb8, "NEXT PRO", size, 600)
+d, _ = lib.text_path(orb8, "NEXT PRO", size, tracking=tr, x=396, y=616)
 add(f'<path d="{d}" fill="#ffffff"/>')
 
 # ---- linha de produtos -------------------------------------------------

@@ -64,12 +64,12 @@ tex.append('</g>')
 add("".join(tex))
 
 # ---- logo --------------------------------------------------------------
-add(logo.mark(230, 588, 352, 364, uid="m2"))
+add(logo.mark(228, 590, 368, 360, uid="m2"))
 
 CAP = 135
 size = CAP / 0.720
-tr = lib.fit_tracking(orb, "NEXT PRO", size, 1095)
-d, wpx = lib.text_path(orb, "NEXT PRO", size, tracking=tr, x=652, y=868)
+tr = lib.fit_tracking(orb, "NEXT PRO", size, 1080)
+d, wpx = lib.text_path(orb, "NEXT PRO", size, tracking=tr, x=668, y=868)
 add(f'<path d="{d}" fill="#ffffff"/>')
 
 # ---- hairline ----------------------------------------------------------

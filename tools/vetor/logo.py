@@ -2,11 +2,11 @@
 import math
 
 DEF = dict(
-    top=(0.24, 0.0), bot=(0.12, 1.0),
-    r1=(0.72, 0.05), r2=(1.0, 0.28), rmid=(1.0, 0.53),
-    r3=(1.0, 0.80), r4=(0.62, 0.99),
-    l1=(0.22, 0.70), l2=(0.33, 0.30),
-    ang=68.0, nbands=8, tipmul=1.25, gapmul=0.30, start=-0.42, endf=1.0,
+    top=(0.06, 0.0), bot=(0.40, 1.0),
+    r1=(0.55, 0.02), r2=(0.95, 0.20), rmid=(1.0, 0.48),
+    r3=(1.0, 0.72), r4=(0.72, 0.97),
+    l1=(0.28, 0.72), l2=(0.12, 0.32),
+    ang=63.0, nbands=9, tipmul=1.0, gapmul=0.36, start=-0.52, endf=1.0,
 )
 
 def outline(x, y, w, h, p=DEF):
@@ -24,6 +24,7 @@ def outline(x, y, w, h, p=DEF):
 
 def mark(x, y, w, h, color="#ffffff", uid="lg", p=DEF):
     d = outline(x, y, w, h, p)
+    rot = p.get("rot", 0.0)
     ang = math.radians(p["ang"])
     ux, uy = math.cos(ang), -math.sin(ang)
     nx, ny = -uy, ux
@@ -43,6 +44,11 @@ def mark(x, y, w, h, color="#ffffff", uid="lg", p=DEF):
                      f"L{p3[0]:.2f},{p3[1]:.2f} L{p4[0]:.2f},{p4[1]:.2f} Z")
         off = b + stripe * p["gapmul"]
         i += 1
+    if rot:
+        rt = f' transform="rotate({rot} {cx:.2f} {cy:.2f})"'
+        return (f'<clipPath id="{uid}-clip"><g{rt}><path d="{d}"/></g></clipPath>'
+                f'<g clip-path="url(#{uid}-clip)" fill="{color}">'
+                f'<path d="{" ".join(bands)}"/></g>')
     return (f'<clipPath id="{uid}-clip"><path d="{d}"/></clipPath>'
             f'<g clip-path="url(#{uid}-clip)" fill="{color}">'
             f'<path d="{" ".join(bands)}"/></g>')
